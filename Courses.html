@@ -3,56 +3,65 @@
 <html lang="en">
 
 <head>
-    <div style="font-size: 20px; background-color:rgb(160, 82, 45); color: white; overflow: hidden;" >
-        <a>Home</a>
-        <a href="I:\WebProject\courses_page\Courses.html">Courses</a>
-        <a>Students</a>
-        <a href="I:\WebProject\AddStudent.html">Register new Student</a>
-        <a>Update Student</a>
-    </div>
     <meta charset="utf-8" />
     <title>Courses</title>
     <style>
-         a{
-            padding: 14px 16px ;
+        
+        table.courseT a {
+            padding: 10px 16px;
             text-align: center;
-            float: left;
+            text-decoration: none;
         }
-        a:hover{
-            background-color: rgba(255, 255, 255, 0.89);
-            color: black;
+        table.bar a {
+            text-decoration: none;
+            color: #ffffff;       
         }
-        th , td {
-            padding: 20px;
-            margin: 0 auto;
+        table.bar {
+            border-collapse: collapse;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            width: 100%;
+            box-shadow: 0 0 20px #ddcbe4;
+            font-style: Sans-serif;
         }
-        body {font-family: Arial, Helvetica, sans-serif;}
-        table {
+        table.bar a:hover {
+           font-size: 101%;
+           padding-bottom: 5px;
+           border-bottom:5px solid #036645;
+           border-bottom-left-radius: 10%;
+           border-bottom-right-radius: 10%;
+        }
+        table.courseT a:hover {
+            color: #7f0098;
+        }
+        table.courseT{
+            border-radius: 5px 6px;
             border-collapse: collapse;
             margin: 25px 10%;
             font-size: 1.5em;
             font-family: sans-serif;
-            min-width: 1000px;
+            min-width: 80%;
             box-shadow: 0 0 20px #ddcbe4;
             font-style: Sans-serif;
         }
-        table tbody td:last-of-type{
+
+        table tbody td:last-of-type {
             text-align: center;
         }
-
         table thead tr {
             background-color: #7f0098;
             color: #ffffff;
             text-align: left;
         }
+
         .last {
             text-align: center;
         }
+
         table th,
         table td {
             padding: 12px 15px;
         }
-
         table tbody tr {
             border-bottom: 1px solid #dddddd;
         }
@@ -69,11 +78,13 @@
             font-weight: bold;
             color: #000000;
         }
+
         caption {
             font-size: 70px;
             color: #7f0098;
         }
-        tbody td a{
+
+        tbody td a {
             color: #000000;
             text-decoration: none;
         }
@@ -81,7 +92,28 @@
 </head>
 
 <body>
-    <table class="tyy">
+    <table class="bar">
+        <thead>
+            <tr>
+                <th>
+                    <a>Home</a>
+                </th>
+                <th>
+                    <a href="I:\WebProject\courses_page\Courses.html">Courses</a>
+                </th>
+                <th>
+                    <a>Students</a>
+                </th>
+                <th>
+                    <a href="I:\WebProject\AddStudent.html">Register new Student</a>
+                </th>
+                <th>
+                    <a>Update Student</a>
+                </th>
+            </tr>
+        </thead>
+    </table>
+    <table class="courseT">
         <caption>Courses</caption>
         <thead>
             <tr>
