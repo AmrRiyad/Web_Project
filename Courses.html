@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <div style="font-size: 20px; background-color:rgb(160, 82, 45); color: white; overflow: hidden;" >
+        <a>Home</a>
+        <a href="I:\WebProject\courses_page\Courses.html">Courses</a>
+        <a>Students</a>
+        <a href="I:\WebProject\AddStudent.html">Register new Student</a>
+        <a>Update Student</a>
+    </div>
+    <meta charset="utf-8" />
+    <title>Courses</title>
+    <style>
+         a{
+            padding: 14px 16px ;
+            text-align: center;
+            float: left;
+        }
+        a:hover{
+            background-color: rgba(255, 255, 255, 0.89);
+            color: black;
+        }
+        th , td {
+            padding: 20px;
+            margin: 0 auto;
+        }
+        body {font-family: Arial, Helvetica, sans-serif;}
+        table {
+            border-collapse: collapse;
+            margin: 25px 10%;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            min-width: 1000px;
+            box-shadow: 0 0 20px #ddcbe4;
+            font-style: Sans-serif;
+        }
+        table tbody td:last-of-type{
+            text-align: center;
+        }
+
+        table thead tr {
+            background-color: #7f0098;
+            color: #ffffff;
+            text-align: left;
+        }
+        .last {
+            text-align: center;
+        }
+        table th,
+        table td {
+            padding: 12px 15px;
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        table tbody tr:nth-of-type(even) {
+            background-color: hsl(173, 29%, 95%);
+        }
+
+        table tbody tr {
+            border-bottom: 2px solid #7f0098;
+        }
+
+        tbody tr {
+            font-weight: bold;
+            color: #000000;
+        }
+        caption {
+            font-size: 70px;
+            color: #7f0098;
+        }
+        tbody td a{
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="tyy">
+        <caption>Courses</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Course name</th>
+                <th>Department</th>
+                <th class="last">Number of students</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>512</td>
+                <td>Logic</td>
+                <td>General</td>
+                <td><a href="" target="blank">1200</a></td>
+            </tr>
+            <tr>
+                <td>225</td>
+                <td>Math3</td>
+                <td>General</td>
+                <td><a href="" target="blank">1012</a></td>
+            </tr>
+            <tr>
+                <td>121</td>
+                <td>Network</td>
+                <td>General</td>
+                <td><a href="" target="blank">962</a></td>
+            </tr>
+            <tr>
+                <td>232</td>
+                <td>Algorithms</td>
+                <td>CS</td>
+                <td><a href="" target="blank">355</a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+</body>
+
+</html>
