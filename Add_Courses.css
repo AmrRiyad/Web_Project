@@ -5,7 +5,7 @@
 .weekDays-selector input[type=checkbox] + label {
     display: inline-block;
     border-radius: 3px;
-    background: #dddddd;
+    background: #c9c9c9;
     height: 30px;
     width: 30px;
     margin-right: 3px;
@@ -52,7 +52,7 @@ h2{
   }
 
   .modal-content {
-    background-color: #faf8f8;
+    background-color: #e6e6e6;
     margin: 3% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid rgb(0, 0, 0);
     width: 80%; /* Could be more or less, depending on screen size */
@@ -93,6 +93,7 @@ button:hover {
   opacity:1;
 }
 
+
 /* Float add button */
  .addbtn {
   float: left;
@@ -101,3 +102,17 @@ button:hover {
   font-size: 20px;
 }
 
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 200%;
+  padding: 12px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
