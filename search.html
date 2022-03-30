@@ -63,9 +63,11 @@
 
         .bar {
             margin: 0 auto;
-            width: 575px;
+            height: 40px;
+            width: 440px;
             border-radius: 30px;
             border: 1px solid #dcdcdc;
+            padding: 10px ;
         }
 
         .bar:hover {
@@ -78,19 +80,23 @@
         }
 
         .searchbar {
-            height: 45px;
+            height: 30px;
             border: none;
-            width: 500px;
-            font-size: 16px;
+            width: 390px;
+            font-size: 25px;
+            background-color: transparent;
             outline: none;
 
         }
 
-        .voice {
-            height: 20px;
-            position: relative;
-            top: 5px;
-            left: 10px;
+        .search {
+            height: 25px;
+            width: 25px;
+            margin: 0 auto;
+            border: 0;
+            background-image: url('search_icon.png') ;
+            background-color: transparent;
+            background-size: contain;
         }
 
         table {
@@ -139,10 +145,10 @@
     <div style="margin-left: 20%;">
         <div class="container">
             <div class="bar">
-                <input class="searchbar" type="text" title="Search">
-                <a href="#"> <img class="voice"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png"
-                        title="Search by Voice"></a>
+                <form>
+                    <input class="searchbar" type="text" title="Search">
+                    <button class="search" type="submit" value="search"></button>
+                </form>
             </div>
             <hr>
             <table>
