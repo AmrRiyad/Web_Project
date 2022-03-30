@@ -1,59 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title> Students' Information </title>
     <style>
-        a{
-            padding: 14px 16px ;
-            text-align: center;
-            float: left;
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
         }
-        a:hover{
-            background-color: rgba(255, 255, 255, 0.89);
-            color: rgb(23, 228, 50);
-        }
-        tr{
+
+        tr {
             background-color: white;
             border-radius: 20px;
             font-size: 20px;
         }
-        th , td {
+
+        th {
+            padding: 20px;
+            margin: 0 auto;
+            color: white;
+            background-color: rgb(112, 79, 65);
+        }
+
+        td {
             padding: 20px;
             margin: 0 auto;
         }
-     /* tr:nth-child(even) {background-color: rgb(255, 218, 185);}
-     tr:nth-child(odd) {background-color: rgb(250, 194, 146)} */
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: rgb(160, 82, 45);
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 20%;
+            height: 100%;
+            background-color: #faf8f8;
+            position: fixed;
+            overflow: auto;
+        }
+
+        .container {
+            position: relative;
+            border-radius: 8px;
+            background-color: #faf8f8;
+            padding: 20px 0 30px 0;
+            margin: 20px auto;
+            max-width: 90%;
+            border: 1px solid rgb(214, 213, 213);
+        }
+
+        .bar {
+            margin: 0 auto;
+            width: 575px;
+            border-radius: 30px;
+            border: 1px solid #dcdcdc;
+        }
+
+        .bar:hover {
+            box-shadow: 1px 1px 8px 1px #dcdcdc;
+        }
+
+        .bar:focus-within {
+            box-shadow: 1px 1px 8px 1px #dcdcdc;
+            outline: none;
+        }
+
+        .searchbar {
+            height: 45px;
+            border: none;
+            width: 500px;
+            font-size: 16px;
+            outline: none;
+
+        }
+
+        .voice {
+            height: 20px;
+            position: relative;
+            top: 5px;
+            left: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0 auto;
+            border-spacing: 0 15px;
+            margin-top: 15px;
+            max-width: 75%;
+            text-align: center;
+        }
+
+        td,
+        th {
+            padding: 8px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background-color: rgb(160, 82, 45);
+            color: white;
+        }
     </style>
 </head>
-<body style="margin: 0px; font-family: Arial, Helvetica, sans-serif;">
-    <div style="font-size: 20px; background-color:rgb(23, 228, 50); color: white; overflow: hidden;" >
-        <a>Home</a>
-        <a>Courses</a>
-        <a>Students</a>
-        <a>Register new Student</a>
-        <a>Update Student</a>
-        <input type="text" placeholder="search students.." style="float: right; padding: 8px;margin: 10px; border-radius: 14px; box-shadow: none; ">
-    </div>
-    <table style="background-color: rgb(153, 253, 153); margin: 0 auto; border-radius: 10px ;  border-collapse: separate; border-spacing: 0 15px; margin-top: 15px;">
-        <tr style="font-size: 22px; ">
-            <th> ID </th>
-            <th> Name </th>
-            <th> Departament </th>
-            <th> Status </th>
-        </tr>
-        <tr>
-            <td> ######## </td>
-            <td> Hello There </td>
-            <td> AI </td>
-            <td> active </td>
-        </tr>
-        <tr>
-            <td> ######## </td>
-            <td> Mazen Hesham Moatasem Abd El-Fatah</td>
-            <td> CS </td>
-            <td> active </td>
-        </tr>
 
-    </table>
+<body style="margin: 0px; font-family: Arial, Helvetica, sans-serif;">
+    <div style=" background-color: rgb(160, 82, 45); padding: 16px; font-size: 25px; color: white;">
+        Hello
+    </div>
+    <ul>
+        <li><a href="Add_Student.html">Home</a></li>
+        <li><a>Courses</a></li>
+        <li><a>Students</a></li>
+        <li><a>Register new Student</a></li>
+        <li><a>Update Student</a></li>
+    </ul>
+    <div style="margin-left: 20%;">
+        <div class="container">
+            <div class="bar">
+                <input class="searchbar" type="text" title="Search">
+                <a href="#"> <img class="voice"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png"
+                        title="Search by Voice"></a>
+            </div>
+            <hr>
+            <table>
+                <tr>
+                    <th> ID </th>
+                    <th> Name </th>
+                    <th> Departament </th>
+                    <th> Status </th>
+                </tr>
+                <tr>
+                    <td> 101 </td>
+                    <td> Karl than </td>
+                    <td> AI </td>
+                    <td> active </td>
+                </tr>
+                <tr>
+                    <td> 102 </td>
+                    <td> robin van-bastin </td>
+                    <td> CS </td>
+                    <td> active </td>
+                </tr>
+                <tr>
+                    <td> 103 </td>
+                    <td> kim hyun </td>
+                    <td> IS </td>
+                    <td> inactive </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
 </body>
+
 </html>
