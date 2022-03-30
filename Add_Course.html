@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Add Course page </title>
+    <link rel="stylesheet" href="Add_Course.css">
+</head>
+
+<body style="margin: 0px; font-family: Arial, Helvetica, sans-serif;">
+
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <form class="modal-content" action="/action_page.php">
+        <div class="container">
+
+
+            <p class="head">
+            <h2>Add courses</h2>
+            </p>
+
+            <hr>
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="Name"><b>Course Name: </b></label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Enter Course Name" name="Name" required>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="ID"><b>Course ID: </b></label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Enter Course ID" name="ID" required>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="Department"><b>Course Department: </b></label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Enter Course Department" name="Department" required>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="Hall"><b>Course Hall: </b></label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Enter Course Hall" name="Hall" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="Hall"><b>Course Hall: </b></label>
+                    </td>
+                    <td>
+                        <div class="weekDays-selector">
+                            <input type="checkbox" id="weekday-sat" class="weekday" />
+                            <label for="weekday-sat">Sa</label>
+                            <input type="checkbox" id="weekday-sun" class="weekday" />
+                            <label for="weekday-sun">Su</label>
+                            <input type="checkbox" id="weekday-mon" class="weekday" />
+                            <label for="weekday-mon">Mo</label>
+                            <input type="checkbox" id="weekday-tue" class="weekday" />
+                            <label for="weekday-tue">Tu</label>
+                            <input type="checkbox" id="weekday-wed" class="weekday" />
+                            <label for="weekday-wed">We</label>
+                            <input type="checkbox" id="weekday-thu" class="weekday" />
+                            <label for="weekday-thu">Th</label>
+                            <input type="checkbox" id="weekday-fri" class="weekday" />
+                            <label for="weekday-fri">Fr</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="clearfix" style="padding-left: 450px;">
+            <button type="submit" class="addbtn">Add</button>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
