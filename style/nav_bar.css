@@ -17,24 +17,6 @@ small {
     color: rgba(0, 0, 0, 0.4);
 }
 
-h1 {
-    text-align: center;
-    padding: 50px 0;
-    font-weight: 800;
-    margin: 0;
-    letter-spacing: -1px;
-    color: inherit;
-    font-size: 40px;
-}
-
-h2 {
-    text-align: center;
-    font-size: 30px;
-    margin: 0;
-    font-weight: 300;
-    color: inherit;
-    padding: 50px;
-}
 
 .center {
     text-align: center;
@@ -46,7 +28,6 @@ h2 {
 
 nav {
     width: 100%;
-    margin: 0 auto;
     background: #283747;
     padding: 0 0;
     box-shadow: 0px 3px 0px #ffffff;
@@ -71,7 +52,6 @@ nav ul li a {
     color: rgb(255, 255, 255);
     font-weight: 800;
     text-transform: uppercase;
-    margin: 0 10px;
 }
 
 nav ul li a,

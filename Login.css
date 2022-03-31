@@ -62,12 +62,6 @@ button:active {
 button:focus {
 	outline: none;
 }
-
-button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
-}
-
 form {
 	background-color: #FFFFFF;
 	display: flex;

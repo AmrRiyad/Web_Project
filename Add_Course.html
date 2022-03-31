@@ -6,126 +6,126 @@
     <title> Add Course page </title>
     <link rel="stylesheet" href="Add_Courses.css">
     <link rel="stylesheet" href="style/nav_bar.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 
-<body style="margin: 0px; font-family: Arial, Helvetica, sans-serif;">
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="Home.html"> Home</a>
+            </li>
+            <li>
+                <a class="nowT" href="#"> Courses</a>
+                <ul class="sub1">
+                    <li class="now">
+                        <a href="Add_Course.html">add courses</a>
+                    </li>
+                    <li>
+                        <a href="Courses.html"> view courses</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"> Students</a>
+                <ul class="sub2">
+                    <li>
+                        <a href="Add_Student.html"> add students</a>
+                    </li>
+                    <li>
+                        <a href="students.html">view students</a>
+                    </li>
+                </ul>
+            </li>
+            <li style="padding-left: 805px;">
+                <a href="Login.html">Sign out</a>
+            </li>
+
+        </ul>
+    </nav>
     <div style="margin-top: 10px; padding: 35px 15px;">
-        <nav style="margin-left: -16px;">
-            <ul>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-                </li>
-                <li>
-                    <a class="nowT" href="#"><i class="fa fa-graduation-cap"></i> Courses</a>
-                    <ul class="sub1">
-                        <li>
-                            <a href="Add_Course.html"><i class="material-icons" style="font-size:14px; ">add_to_photos</i>
-                                add courses</a>
-                        </li>
-                        <li class="now">
-                            <a href="Courses.html"><i class="fa fa-book"></i> view courses</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-user"></i> Students</a>
-                    <ul class="sub2">
-                        <li>
-                            <a href="Add_Student.html"><i class="fa fa-user-plus"></i> add students</a>
-                        </li>
-                        <li>
-                            <a href="students.html"><i class="fa fa-users"></i> view students</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    <form class="modal-content" action="/action_page.php">
-        <div class="container">
+        <form class="modal-content" action="/action_page.php">
+            <div class="container">
 
 
-            <p class="head">
-            <h2>Add courses</h2>
-            </p>
+                <p class="head">
+                <h2>Add courses</h2>
+                </p>
 
-            <hr>
+                <hr>
 
-            <table>
-                <tr>
-                    <td>
-                        <label for="Name"><b>Course Name: </b></label>
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter Course Name" name="Name" required>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        <label for="ID"><b>Course ID: </b></label>
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter Course ID" name="ID" required>
-                    </td>
-                </tr>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="Name"><b>Course Name: </b></label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Enter Course Name" name="Name" required>
+                        </td>
+                    </tr>
 
 
-                <tr>
-                    <td>
-                        <label for="Department"><b>Course Department: </b></label>
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter Course Department" name="Department" required>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <label for="ID"><b>Course ID: </b></label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Enter Course ID" name="ID" required>
+                        </td>
+                    </tr>
 
 
-                
-                <tr>
-                    <td>
-                        <label for="Hall"><b>Course Days: </b></label>
-                    </td>
-                    <td>
-                        <div class="weekDays-selector">
-                            <input type="checkbox" id="weekday-sat" class="weekday" />
-                            <label for="weekday-sat">Sa</label>
-                            <input type="checkbox" id="weekday-sun" class="weekday" />
-                            <label for="weekday-sun">Su</label>
-                            <input type="checkbox" id="weekday-mon" class="weekday" />
-                            <label for="weekday-mon">Mo</label>
-                            <input type="checkbox" id="weekday-tue" class="weekday" />
-                            <label for="weekday-tue">Tu</label>
-                            <input type="checkbox" id="weekday-wed" class="weekday" />
-                            <label for="weekday-wed">We</label>
-                            <input type="checkbox" id="weekday-thu" class="weekday" />
-                            <label for="weekday-thu">Th</label>
-                            <input type="checkbox" id="weekday-fri" class="weekday" />
-                            <label for="weekday-fri">Fr</label>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <label for="Department"><b>Course Department: </b></label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Enter Course Department" name="Department" required>
+                        </td>
+                    </tr>
 
-                
-                <tr>
-                    <td>
-                        <label for="Hall"><b>Course Hall: </b></label>
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter Course Hall" name="Hall" required>
-                    </td>
-                </tr>
-            </table>
-        </div>
+                    <tr>
+                        <td>
+                            <label for="Hall"><b>Course Days: </b></label>
+                        </td>
+                        <td>
+                            <div class="weekDays-selector">
+                                <input type="checkbox" id="weekday-sat" class="weekday" />
+                                <label for="weekday-sat">Sa</label>
+                                <input type="checkbox" id="weekday-sun" class="weekday" />
+                                <label for="weekday-sun">Su</label>
+                                <input type="checkbox" id="weekday-mon" class="weekday" />
+                                <label for="weekday-mon">Mo</label>
+                                <input type="checkbox" id="weekday-tue" class="weekday" />
+                                <label for="weekday-tue">Tu</label>
+                                <input type="checkbox" id="weekday-wed" class="weekday" />
+                                <label for="weekday-wed">We</label>
+                                <input type="checkbox" id="weekday-thu" class="weekday" />
+                                <label for="weekday-thu">Th</label>
+                                <input type="checkbox" id="weekday-fri" class="weekday" />
+                                <label for="weekday-fri">Fr</label>
+                            </div>
+                        </td>
+                    </tr>
 
-        <div class="clearfix" style="padding-left: 450px;">
-            <button type="submit" class="addbtn">Add</button>
-        </div>
 
-    </form>
+                    <tr>
+                        <td>
+                            <label for="Hall"><b>Course Hall: </b></label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Enter Course Hall" name="Hall" required>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="clearfix" style="padding-left: 450px;">
+                <button type="submit" class="addbtn">Add</button>
+            </div>
+
+        </form>
     </div>
 
 
