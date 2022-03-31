@@ -5,22 +5,24 @@
 <head>
     <meta charset="utf-8" />
     <title>Courses</title>
-    <link rel="stylesheet" href="Courses_Css.css">
+    <link rel="stylesheet" href="style/table.css">
+    <link rel="stylesheet" href="style/nav_bar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <nav class="bar">
+    <nav>
         <ul>
             <li>
                 <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
             </li>
-            <li >
-                <a class = "nowT" href="#"><i class="fa fa-graduation-cap"></i> Courses</a>
+            <li>
+                <a class="nowT" href="#"><i class="fa fa-graduation-cap"></i> Courses</a>
                 <ul class="sub1">
                     <li>
-                        <a href="Add_Course.html"><i class="material-icons" style="font-size:14px; ">add_to_photos</i> add courses</a>
+                        <a href="Add_Course.html"><i class="material-icons" style="font-size:14px; ">add_to_photos</i>
+                            add courses</a>
                     </li>
                     <li class="now">
                         <a href="Courses.html"><i class="fa fa-book"></i> view courses</a>
@@ -34,51 +36,50 @@
                         <a href="Add_Student.html"><i class="fa fa-user-plus"></i> add students</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-users"></i> view students</a>
+                        <a href="students.html"><i class="fa fa-users"></i> view students</a>
                     </li>
                 </ul>
             </li>
         </ul>
     </nav>
-    <table class="courseT">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Course name</th>
-                <th>Department</th>
-                <th class="last">Number of students</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>512</td>
-                <td>Logic</td>
-                <td>General</td>
-                <td><a href="" target="blank">1200</a></td>
-            </tr>
-            <tr>
-                <td>225</td>
-                <td>Math3</td>
-                <td>General</td>
-                <td><a href="" target="blank">1012</a></td>
-            </tr>
-            <tr>
-                <td>121</td>
-                <td>Network</td>
-                <td>General</td>
-                <td><a href="" target="blank">962</a></td>
-            </tr>
-            <tr>
-                <td>232</td>
-                <td>Algorithms</td>
-                <td>CS</td>
-                <td><a href="" target="blank">355</a></td>
-            </tr>
-        </tbody>
-        <tfoot>
-
-        </tfoot>
-    </table>
+    <div style="margin-top: 50px; padding: 35px 15px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Course name</th>
+                    <th>Department</th>
+                    <th class="last">Number of students</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>512</td>
+                    <td>Logic</td>
+                    <td>General</td>
+                    <td><a href="" target="blank">1200</a></td>
+                </tr>
+                <tr>
+                    <td>225</td>
+                    <td>Math3</td>
+                    <td>General</td>
+                    <td><a href="" target="blank">1012</a></td>
+                </tr>
+                <tr>
+                    <td>121</td>
+                    <td>Network</td>
+                    <td>General</td>
+                    <td><a href="" target="blank">962</a></td>
+                </tr>
+                <tr>
+                    <td>232</td>
+                    <td>Algorithms</td>
+                    <td>CS</td>
+                    <td><a href="" target="blank">355</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>
