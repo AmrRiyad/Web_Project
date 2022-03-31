@@ -19,7 +19,7 @@
             padding: 20px;
             margin: 0 auto;
             color: white;
-            background-color: rgb(112, 79, 65);
+            background-color: #004e7a;
         }
 
         td {
@@ -36,8 +36,12 @@
         }
 
         li a:hover {
-            background-color: rgb(160, 82, 45);
+            background-color: #004e7a;
             color: white;
+        }
+
+        li a:hover img {
+            filter: invert(100%);
         }
 
         ul {
@@ -57,15 +61,17 @@
             background-color: #faf8f8;
             padding: 20px 0 30px 0;
             margin: 20px auto;
-            max-width: 90%;
+            max-width: 80%;
             border: 1px solid rgb(214, 213, 213);
         }
 
         .bar {
             margin: 0 auto;
-            width: 575px;
+            height: 30px;
+            width: 440px;
             border-radius: 30px;
             border: 1px solid #dcdcdc;
+            padding: 10px ;
         }
 
         .bar:hover {
@@ -78,19 +84,24 @@
         }
 
         .searchbar {
-            height: 45px;
+            height: 30px;
             border: none;
-            width: 500px;
-            font-size: 16px;
+            width: 400px;
+            font-size: 20px;
+            background-color: transparent;
             outline: none;
 
         }
 
-        .voice {
-            height: 20px;
-            position: relative;
-            top: 5px;
-            left: 10px;
+        .search {
+            height: 25px;
+            width: 25px;
+            margin: auto 5px;
+            float: right;
+            border: 0;
+            background-image: url('images/search_icon.png') ;
+            background-color: transparent;
+            background-size: contain;
         }
 
         table {
@@ -119,30 +130,31 @@
         th {
             padding-top: 12px;
             padding-bottom: 12px;
-            background-color: rgb(160, 82, 45);
+            background-color: #004e7a;
             color: white;
         }
     </style>
 </head>
 
 <body style="margin: 0px; font-family: Arial, Helvetica, sans-serif;">
-    <div style=" background-color: rgb(160, 82, 45); padding: 16px; font-size: 25px; color: white;">
+    <div style=" background-color: #004e7a; padding: 16px; font-size: 25px; color: white;">
         Hello
     </div>
     <ul>
-        <li><a href="Add_Student.html">Home</a></li>
-        <li><a>Courses</a></li>
-        <li><a>Students</a></li>
-        <li><a>Register new Student</a></li>
+        <li><a> <img src="images/home.png" height="25px;"> Home</a></li>
+        <li> <a href="Courses.html"> <img src="images/books.png" height="25px;">  Courses</a></li>
+        <li> <a href="search.html">  <img src="images/user.png" height="25px;"> Students</a></li>
+        <li> <a href="Add_Student.html">  <img src="images/add-user.png" height="25px;"> Register new Student</a></li>
+        <li> <a href="Add_Course.html"> <img src="images/book.png" height="25px;"> Register new Course</a></li>
         <li><a>Update Student</a></li>
     </ul>
     <div style="margin-left: 20%;">
         <div class="container">
             <div class="bar">
-                <input class="searchbar" type="text" title="Search">
-                <a href="#"> <img class="voice"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png"
-                        title="Search by Voice"></a>
+                <form>
+                    <input class="searchbar" type="text" title="Search">
+                    <button class="search" type="submit" value="search"></button>
+                </form>
             </div>
             <hr>
             <table>
