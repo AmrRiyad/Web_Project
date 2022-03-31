@@ -5,116 +5,42 @@
 <head>
     <meta charset="utf-8" />
     <title>Courses</title>
-    <style>
-        
-        table.courseT a {
-            padding: 10px 16px;
-            text-align: center;
-            text-decoration: none;
-        }
-        table.bar a {
-            text-decoration: none;
-            color: #ffffff;       
-        }
-        table.bar {
-            border-collapse: collapse;
-            font-size: 1.5em;
-            font-family: sans-serif;
-            width: 100%;
-            box-shadow: 0 0 20px #ddcbe4;
-            font-style: Sans-serif;
-        }
-        table.bar a:hover {
-           font-size: 101%;
-           padding-bottom: 5px;
-           border-bottom:5px solid #036645;
-           border-bottom-left-radius: 10%;
-           border-bottom-right-radius: 10%;
-        }
-        table.courseT a:hover {
-            color: #7f0098;
-        }
-        table.courseT{
-            border-radius: 5px 6px;
-            border-collapse: collapse;
-            margin: 25px 10%;
-            font-size: 1.5em;
-            font-family: sans-serif;
-            min-width: 80%;
-            box-shadow: 0 0 20px #ddcbe4;
-            font-style: Sans-serif;
-        }
-
-        table tbody td:last-of-type {
-            text-align: center;
-        }
-        table thead tr {
-            background-color: #7f0098;
-            color: #ffffff;
-            text-align: left;
-        }
-
-        .last {
-            text-align: center;
-        }
-
-        table th,
-        table td {
-            padding: 12px 15px;
-        }
-        table tbody tr {
-            border-bottom: 1px solid #dddddd;
-        }
-
-        table tbody tr:nth-of-type(even) {
-            background-color: hsl(173, 29%, 95%);
-        }
-
-        table tbody tr {
-            border-bottom: 2px solid #7f0098;
-        }
-
-        tbody tr {
-            font-weight: bold;
-            color: #000000;
-        }
-
-        caption {
-            font-size: 70px;
-            color: #7f0098;
-        }
-
-        tbody td a {
-            color: #000000;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="Courses_Css.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <table class="bar">
-        <thead>
-            <tr>
-                <th>
-                    <a>Home</a>
-                </th>
-                <th>
-                    <a href="I:\WebProject\courses_page\Courses.html">Courses</a>
-                </th>
-                <th>
-                    <a>Students</a>
-                </th>
-                <th>
-                    <a href="I:\WebProject\AddStudent.html">Register new Student</a>
-                </th>
-                <th>
-                    <a>Update Student</a>
-                </th>
-            </tr>
-        </thead>
-    </table>
+    <nav class="bar">
+        <ul>
+            <li>
+                <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+            </li>
+            <li >
+                <a class = "nowT" href="#"><i class="fa fa-graduation-cap"></i> Courses</a>
+                <ul class="sub1">
+                    <li>
+                        <a href="#"><i class="material-icons" style="font-size:14px; ">add_to_photos</i> add courses</a>
+                    </li>
+                    <li class="now">
+                        <a href="#"><i class="fa fa-book"></i> view courses</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-user"></i> Students</a>
+                <ul class="sub2">
+                    <li>
+                        <a href="#"><i class="fa fa-user-plus"></i> add students</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-users"></i> view students</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
     <table class="courseT">
-        <caption>Courses</caption>
         <thead>
             <tr>
                 <th>ID</th>
