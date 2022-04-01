@@ -48,8 +48,9 @@ select {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
   padding: 50px 20px 20px 20px;
-  margin: 15% 26% 0px;
+  margin: 14% 26% 0px;
   width: 600px;
+  
 }
 
 
@@ -103,4 +104,5 @@ input {
   margin-bottom: 10px;
   text-align: left;
   text-size-adjust: 50px;
+  width: 97%;
 }

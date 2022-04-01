@@ -41,7 +41,8 @@
       <form class="modal-content">
         <div class="container">
           <h1>Student Registration</h1>
-
+          <hr>
+          <br>
             <label for="Name"><b>Name</b></label>
             <input type="text" placeholder="Enter Name" name="Name" required>
 
@@ -49,7 +50,6 @@
             <input type="text" placeholder="Enter ID" name="ID" required>
 
             <label for="Birthday" class="label_radio"><b>Birthday</b></label>
-            </br>
             <select required>
               <option value=""> Days</option>
               <option value="1"> 1</option>
@@ -119,8 +119,7 @@
               <option value="2005"> 2005</option>
             </select>            
            <br>
-          <label for="University" class="label_radio"><b>University</b></label>
-          <br>
+          <label for="University" class="label_radio"><b style="margin-right: -5px;">University</b></label>
           <select name="University" required>
             <option value=""> University</option>
             <option value="Cairo University"> Cairo University</option>
@@ -141,19 +140,8 @@
             <option value="Tanta University"> Tanta University</option>
             <option value="Menoufia University"> Menoufia University</option>
           </select>
-
           <br>
-          <label for="Gender" class="label_radio"><b>Gender</b></label>
-          <div class="select-field">
-            <input type="radio" id="radio-one" name="gender" required>
-            <label for="radio-one">Male</label>
-            <input type="radio" id="radio-two" name="gender" required>
-            <label for="radio-two" style="width: 80px;">Female</label>
-          </div>
-          <br>
-
-          <label for="Departament" class="label_radio"><b>Departament</b></label>
-          <br>
+          <label for="Departament" class="label_radio"><b style="margin-right: -25px;">Departament</b></label>
           <select name="Departament" required>
             <option value=""> Departament</option>
             <option value="CS"> CS</option>
@@ -164,7 +152,20 @@
           </select>
 
           <br>
-          <label for="Status" class="label_radio"><b>Status</b></label>
+          <div style="display: flex;">
+          <label for="Gender" class="label_r"><b>Gender</b></label>
+          <div class="select-field">
+            <input type="radio" id="radio-one" name="gender" required>
+            <label for="radio-one">Male</label>
+            <input type="radio" id="radio-two" name="gender" required>
+            <label for="radio-two" style="width: 80px;">Female</label>
+          </div>
+        </div>
+         
+
+          <br>
+          <div style="display: flex;">
+          <label for="Status" class="label_r"><b>Status</b></label>
           <br>
           <div class="select-field">
             <input type="radio" id="radio-three" name="status" required>
@@ -172,7 +173,8 @@
             <input type="radio" id="radio-four" name="status" required>
             <label for="radio-four" style="width: 80px;">Inactive</label>
           </div>
-
+          </div>
+          <br>
           <div class="center">
             <button type="submit">Register</button>
           </div>
