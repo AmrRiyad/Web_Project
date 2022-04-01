@@ -42,20 +42,14 @@
         <div class="container">
           <h1>Student Registration</h1>
 
-          <div>
-
             <label for="Name"><b>Name</b></label>
             <input type="text" placeholder="Enter Name" name="Name" required>
-          </div>
 
-          <div>
             <label for="ID"><b>ID</b></label>
             <input type="text" placeholder="Enter ID" name="ID" required>
-          </div>
 
-            <label for="Birthday"><b>Birthday</b></label>
+            <label for="Birthday" class="label_radio"><b>Birthday</b></label>
             </br>
-            <span>
             <select required>
               <option value=""> Days</option>
               <option value="1"> 1</option>
@@ -123,12 +117,10 @@
               <option value="2003"> 2003</option>
               <option value="2004"> 2004</option>
               <option value="2005"> 2005</option>
-            </select>
-          </span>
+            </select>            
+           <br>
+          <label for="University" class="label_radio"><b>University</b></label>
           <br>
-            
-
-          <label for="University"><b>University</b></label>
           <select name="University" required>
             <option value=""> University</option>
             <option value="Cairo University"> Cairo University</option>
@@ -150,7 +142,7 @@
             <option value="Menoufia University"> Menoufia University</option>
           </select>
 
-
+          <br>
           <label for="Gender" class="label_radio"><b>Gender</b></label>
           <div class="select-field">
             <input type="radio" id="radio-one" name="gender" required>
@@ -158,8 +150,10 @@
             <input type="radio" id="radio-two" name="gender" required>
             <label for="radio-two" style="width: 80px;">Female</label>
           </div>
+          <br>
 
-          <label for="Departament"><b>Departament</b></label>
+          <label for="Departament" class="label_radio"><b>Departament</b></label>
+          <br>
           <select name="Departament" required>
             <option value=""> Departament</option>
             <option value="CS"> CS</option>
@@ -169,17 +163,18 @@
             <option value="DS"> DS</option>
           </select>
 
-
-          <label for="Status"><b>Status</b></label>
+          <br>
+          <label for="Status" class="label_radio"><b>Status</b></label>
+          <br>
           <div class="select-field">
             <input type="radio" id="radio-three" name="status" required>
             <label for="radio-three">Active</label>
             <input type="radio" id="radio-four" name="status" required>
-            <label for="radio-four">Inactive</label>
+            <label for="radio-four" style="width: 80px;">Inactive</label>
           </div>
 
           <div class="center">
-            <button type="submit">Add</button>
+            <button type="submit">Register</button>
           </div>
         </div>
       </form>

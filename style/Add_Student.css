@@ -1,4 +1,5 @@
 
+
 .select-field input {
   height: 1px;
   width: 1px;
@@ -10,12 +11,13 @@
   height: 50px;
   width: 65px;
   margin-right: 22px;
-  margin-bottom: 20px;
+  margin-bottom: -20px;
   line-height: 50px;  
   text-align: center;
   cursor: pointer;
   border-radius: 95%;
   user-select: none;
+  font-weight: bold;
 }
 
 .select-field input:checked + label {
@@ -35,22 +37,16 @@ select {
   text-align: left;
 }
 
-/* Full-width input fields */
-input[type=text],
-input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
+input {
+  background-color: #eee;
+  padding: 13px 15px;
   border: none;
-  background: #f1f1f1;
-}
-
-/* Add a background color when the inputs get focus */
-input[type=text]:focus,
-input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+  margin: 9px 0px 3px;
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  text-size-adjust: 50px;
 }
 
 button {
@@ -81,7 +77,6 @@ form {
   flex-direction: column;
   padding: 0 50px;
   height: 100%;
-  text-align: center;
 }
 
 input {
@@ -103,7 +98,6 @@ input {
 /* Add padding to container elements */
 .container {
   padding: 16px;
-  text-align: left;
 }
 
 
@@ -114,7 +108,7 @@ input {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
   width: 800px;
-  margin-top: 5%;
+  margin-top: 7%;
   margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
@@ -133,7 +127,7 @@ b{
   height: 50px;
   width: 65px;
   margin-right: 22px;
-  margin-bottom: 20px;
+  margin-top: 10px;
   line-height: 50px;  
   text-align: center;
   cursor: pointer;
