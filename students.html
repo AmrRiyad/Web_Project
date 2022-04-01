@@ -3,130 +3,78 @@
 
 <head>
     <title> Students </title>
-    <link rel="stylesheet" href="style/table.css">
+    <link rel="stylesheet" href="style/view.css">
     <link rel="stylesheet" href="style/nav_bar.css">
-    
     <style>
-        hr {
-            border: 1px solid #f1f1f1;
-            margin: 15px;
-        }
-
-        .container {
-            position: relative;
-            border-radius: 8px;
-            background-color: inherit ;
-            padding: 20px 0 30px 0;
-            margin: 20px auto;
-            max-width: 80%;
-            border: 1px solid rgb(214, 213, 213);
-        }
-
-        .bar {
-            margin: 0 auto;
-            height: 45px;
-            width: 440px;
-            border-radius: 30px;
-            border: 1px solid #dcdcdc;
-            padding: 8px ;
-        }
-
-        .bar:hover {
-            box-shadow: 1px 1px 8px 1px #dcdcdc;
-        }
-
-        .bar:focus-within {
-            box-shadow: 1px 1px 8px 1px #dcdcdc;
-            outline: none;
-        }
-
-        .searchbar {
-            height: 30px;
-            border: none;
-            width: 370px;
-            font-size: 20px;
-            background-color: transparent;
-            outline: none;
-
-        }
-
         .search {
-            height: 25px;
-            width: 25px;
-            margin: auto 5px;
-            float: right;
-            border: 0;
-            background-image: url('images/search_icon.png') ;
-            background-color: transparent;
-            background-size: contain;
+            background-image: url('images/search_icon.png');
         }
-
     </style>
 </head>
 
 <body>
     <nav>
         <ul>
-          <li>
-            <a href="Home.html">Home</a>
-          </li>
-          <li>
-            <a href="profile.html">Profile</a>
-          </li>
-          <li>
-            <a href="Add_Course.html">
-              add courses</a>
-          </li>
-          <li>
-            <a  href="Add_Student.html"> add students</a>
-          </li>
-          <li>
-            <a href="Courses.html"> view courses</a>
-          </li>
-          <li>
-            <a href="students.html" class="now" >view students</a>
-          </li>
-          <li style="float: right;">
-            <a href="Login.html">Sign out</a>
-        </li>
+            <li>
+                <a href="home.html">Home</a>
+            </li>
+            <li>
+                <a href="add_course.html">
+                    add courses</a>
+            </li>
+            <li>
+                <a href="add_student.html"> add students</a>
+            </li>
+            <li>
+                <a href="courses.html"> view courses</a>
+            </li>
+            <li>
+                <a href="students.html" class="now">view students</a>
+            </li>
+            <li style="float: right;">
+                <a href="login.html">Sign out</a>
+            </li>
         </ul>
-      </nav>
+    </nav>
     <div style="margin-top: 50px; padding: 35px 15px;">
-        <div class="container">
-            <div class="bar">
-                <form>
-                    <input class="searchbar" type="text" title="Search">
-                    <button class="search" type="submit" value="search"></button>
-                </form>
-            </div>
-            <hr>
-            <table>
-                <tr>
-                    <th> ID </th>
-                    <th> Name </th>
-                    <th> Departament </th>
-                    <th> Status </th>
-                </tr>
-                <tr>
-                    <td> 101 </td>
-                    <td> Karl than </td>
-                    <td> AI </td>
-                    <td> active </td>
-                </tr>
-                <tr>
-                    <td> 102 </td>
-                    <td> robin van-bastin </td>
-                    <td> CS </td>
-                    <td> active </td>
-                </tr>
-                <tr>
-                    <td> 103 </td>
-                    <td> kim hyun </td>
-                    <td> IS </td>
-                    <td> inactive </td>
-                </tr>
-            </table>
+        <div class="bar">
+            <form>
+                <select>
+                    <option value="course"> Course </option>
+                    <option value="id"> ID </option>
+                    <option value="name" selected> Name </option>
+                </select>
+                <input class="searchbar" type="text" title="Search">
+                <button class="search" type="submit" value="search"></button>
+            </form>
         </div>
+        <table>
+            <tr>
+                <th> ID </th>
+                <th> Name </th>
+                <th> Departament </th>
+                <th> Status </th>
+            </tr>
+            <tr>
+                <td> 101 </td>
+                <td> Karl than </td>
+                <td> AI </td>
+                <td> active </td>
+            </tr>
+            <tr>
+                <td> 102 </td>
+                <td> robin van-bastin </td>
+                <td> CS </td>
+                <td> active </td>
+            </tr>
+            <tr>
+                <td> 103 </td>
+                <td> kim hyun </td>
+                <td> IS </td>
+                <td> inactive </td>
+            </tr>
+        </table>
+
 
     </div>
 

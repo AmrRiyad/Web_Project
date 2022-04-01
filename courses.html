@@ -3,40 +3,52 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
   <title>Courses</title>
-  <link rel="stylesheet" href="style/table.css">
+  <link rel="stylesheet" href="style/view.css">
   <link rel="stylesheet" href="style/nav_bar.css">
+  <style>
+    .search {
+      background-image: url('images/search_icon.png');
+    }
+  </style>
 </head>
 
 <body>
   <nav>
     <ul>
       <li>
-        <a href="Home.html">Home</a>
+        <a href="home.html">Home</a>
       </li>
       <li>
-        <a href="profile.html">Profile</a>
-      </li>
-      <li>
-        <a href="Add_Course.html">
+        <a href="add_course.html">
           add courses</a>
       </li>
       <li>
-        <a href="Add_Student.html"> add students</a>
+        <a href="add_student.html"> add students</a>
       </li>
       <li>
-        <a href="Courses.html" class="now"> view courses</a>
+        <a href="courses.html" class="now"> view courses</a>
       </li>
       <li>
         <a href="students.html">view students</a>
       </li>
       <li style="float: right;">
-        <a href="Login.html">Sign out</a>
+        <a href="login.html">Sign out</a>
       </li>
     </ul>
   </nav>
   <div style="margin-top: 50px; padding: 35px 15px;">
+    <div class="bar">
+      <form>
+        <select>
+          <option value="id"> ID </option>
+          <option value="departament"> Depart </option>
+          <option value="name" selected> Name </option>
+        </select>
+        <input class="searchbar" type="text" title="Search">
+        <button class="search" type="submit" value="search"></button>
+      </form>
+    </div>
     <table>
       <thead>
         <tr>
