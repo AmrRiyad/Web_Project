@@ -3,8 +3,8 @@
 }
 
 .weekDays-selector input {
-  height: 1px;
-  width: 1px;
+  height: 0px;
+  width: 0px;
 }
 
 .weekDays-selector label {
