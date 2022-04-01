@@ -24,10 +24,13 @@ h2 {
   font-size: 30px;
 }
 
+.container {
+  padding: 16px;
+}
 
 .modal-content {
   background-color: #e6e6e6;
-  margin: 10px auto ;
+  margin: 10px auto;
   /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid rgb(0, 0, 0);
   width: 55%;
@@ -44,8 +47,11 @@ hr {
   margin-bottom: 25px;
 }
 
-.container {
-  padding: 16px;
+.center {
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
 }
 
 button {
