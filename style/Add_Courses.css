@@ -25,6 +25,7 @@
   text-align: center;
   cursor: pointer;
   border-radius: 100%;
+  user-select: none;
 }
 
 .weekDays-selector input:checked + label {
