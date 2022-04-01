@@ -6,17 +6,23 @@
 </head>
 
 <body>
+    
     <div class="container" id="container">
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="Home.html">
                 <h1>Sign in</h1>
                 </br> 
-                <input type="email" placeholder="Email" required minlength="1">
-                <input type="password" placeholder="Password" required minlength="1">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
                 </br>
-                <a><button type="submit" onclick = "location.href='Login.html'">Sign In</button ></a>
-            </form>
-        </div>
+                <div class="clearfix">
+                    <a href="Home.html">
+                    <button type="submit" class="addbtn">Login</button>
+                    </a>
+                  </div>
+                </form>
+            </div>
+        
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-right">
