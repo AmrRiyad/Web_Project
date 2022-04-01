@@ -9,7 +9,8 @@
 body {
     font-family: 'Roboto', sans-serif;
     padding: 0;
-    margin: 0;
+    margin: -20px 0 50px;
+	background: #fff ;
 }
 
 small {
@@ -28,10 +29,10 @@ small {
 
 nav {
     width: 100%;
-    background: #283747;
+    font-size: 18px;
+    background: linear-gradient(to right, black, #004e7a);
     padding: 0 0;
-    box-shadow: 0px 3px 0px #ffffff;
-    height: 50px;
+    height: 60px;
     position: fixed;
     top: 0;
 }
@@ -42,6 +43,7 @@ nav ul li {
 nav ul {
     list-style: none;
     text-align: left;
+    margin-top: 6px;
 }
 
 nav ul li a {
@@ -49,8 +51,8 @@ nav ul li a {
     display: block;
     padding: 15px;
     text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-weight: 800;
+    color: #fff ;
+    font-weight: 450;
     text-transform: uppercase;
 }
 
@@ -61,7 +63,7 @@ nav ul li a:before {
 }
 
 nav ul li a:hover {
-    color: rgb(64, 204, 223);
+    color: rgb(16, 139, 170) ;
 }
 
 
@@ -73,7 +75,7 @@ nav ul li a {
 }
 nav ul li a:after {
     position: absolute;
-    bottom: -0.4px;
+    bottom: -2px;
     left: 0;
     right: 0;
     margin: auto;
@@ -113,11 +115,8 @@ nav ul li ul a{
     box-shadow: 0px 3px 0px #ffffff;
     text-transform:none;
 }
-.now a:after{
-    width: 100%;
-    background :rgb(16, 139, 170);
-}
-.nowT:after{
+
+.now:after{
     width: 100%;
     background :rgb(16, 139, 170);
 }
@@ -133,16 +132,8 @@ nav ul li ul a:after {
     background: rgb(16, 139, 170);
     height: 3px;
 }
-.now a{
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    content: '.';
-    color: transparent;
-    color: rgb(64, 204, 223);
-}
-.nowT{
+
+.now{
     left: 0;
     right: 0;
     margin: auto;
