@@ -1,81 +1,90 @@
+*{
+  border: none;
+}
 .weekDays-selector input {
   display: none !important;
 }
-
 .weekDays-selector input[type=checkbox]+label {
   display: inline-block;
-  border-radius: 3px;
+  border-radius: 100%;
   background: #c9c9c9;
-  height: 30px;
-  width: 30px;
-  margin-right: 3px;
-  line-height: 30px;
+  height: 50px;
+  width: 50px;
+  margin-right: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 50px;
   text-align: center;
   cursor: pointer;
 }
 
 .weekDays-selector input[type=checkbox]:checked+label {
-  background: #004e7a;
-  color: #ffffff;
-}
-
-h2 {
-  text-align: center;
-  font-size: 30px;
-}
-
-.container {
-  padding: 16px;
-}
-
-.modal-content {
-  background-color: #e6e6e6;
-  margin: 10px auto;
-  /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid rgb(0, 0, 0);
-  width: 55%;
-  /* Could be more or less, depending on screen size */
-}
-
-td {
-  padding: 15px;
-  margin: 0 auto;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-button {
   background-color: #004e7a;
   color: white;
-  padding: 14px 20px;
-  margin: 0 auto;
+  transform: scale(1.2);
+  transition: transform 80ms ease-in;
+
+}
+
+
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  padding: 50px 20px 20px 20px;
+  margin: 15% 26% 0px;
+  width: 600px;
+}
+
+
+table {
+  text-align: left;
+  width: 100%;
+  padding: 20px 12px;
+  font-weight: bold;
+}
+h1 {
+  margin-bottom: 17px;
+  text-align: center;
   border: none;
-  width: 30%;
-  font-size: 20px;
-  opacity: 0.9;
 }
-
-button:hover {
-  opacity: 1;
-}
-
-
 /* Full-width input fields */
-input[type=text],
-input[type=password] {
-  width: 120%;
-  padding: 12px;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+button {
+	border-radius: 20px;
+	border: 1px solid white;
+	background-color: #004e7a;
+	color: #FFFFFF;
+	font-size: 12px;
+  padding-left: 50px;
+	font-weight: bold;
+	padding: 14px 50px ;
+  margin: 1px;
+	letter-spacing: 1px;
+	transition: transform 80ms ease-in;
 }
 
-/* Add a background color when the inputs get focus */
-input[type=text]:focus,
-input[type=password]:focus {
-  background-color: #ddd;
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
   outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+
+
+input {
+  background-color: #eee;
+  padding: 13px 15px;
+  margin: 9px 0px 3px;
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  text-size-adjust: 50px;
 }
