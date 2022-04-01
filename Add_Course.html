@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style/Add_Courses.css">
     <link rel="stylesheet" href="style/nav_bar.css">
 
-
 </head>
 
 <body>
@@ -17,45 +16,38 @@
                 <a href="Home.html"> Home</a>
             </li>
             <li>
-                <a class="nowT" href="#"> Courses</a>
-                <ul class="sub1">
-                    <li class="now">
-                        <a href="Add_Course.html">add courses</a>
-                    </li>
-                    <li>
-                        <a href="Courses.html">view courses</a>
-                    </li>
-                </ul>
+                <a href="#">Profile</a>
             </li>
             <li>
-                <a href="#"> Students</a>
-                <ul class="sub2">
-                    <li>
-                        <a href="Add_Student.html"> add students</a>
-                    </li>
-                    <li>
-                        <a href="students.html">view students</a>
-                    </li>
-                </ul>
+                <a class="now" href="Add_Course.html">
+                    add courses</a>
+            </li>
+            <li>
+                <a href="Courses.html"> view courses</a>
+            </li>
+            <li>
+                <a href="Add_Student.html"> add students</a>
+            </li>
+            <li>
+                <a href="students.html"> view students</a>
             </li>
             <li style="float: right;">
                 <a href="Login.html">Sign out</a>
             </li>
-
         </ul>
     </nav>
-    <div style="margin-top: 10px; padding: 35px 15px;">
+    <div style="margin-top: 50px; padding: 35px 15px;">
         <form class="modal-content" action="/action_page.php">
             <div class="container">
 
 
                 <p class="head">
-                <h2>Add courses</h2>
+                <h2>Course Registration</h2>
                 </p>
 
                 <hr>
 
-                <table>
+                <table style="margin: 0 auto;">
                     <tr>
                         <td>
                             <label for="Name"><b>Course Name: </b></label>
@@ -121,8 +113,8 @@
                 </table>
             </div>
 
-            <div class="clearfix" style="padding-left: 450px;">
-                <button type="submit" class="addbtn">Add</button>
+            <div>
+                <button type="submit" >Add</button>
             </div>
 
         </form>
