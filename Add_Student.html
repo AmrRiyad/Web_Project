@@ -38,7 +38,7 @@
       margin: 8px 0;
       border: none;
       cursor: pointer;
-      width: 100%;
+      width: 30%;
       opacity: 0.9;
     }
 
@@ -88,6 +88,7 @@
       clear: both;
       display: table;
     }
+
     .clearfix {
       padding: 0 290px;
       padding-right: 90px;
@@ -100,27 +101,27 @@
     <nav>
       <ul>
         <li>
-          <a href="Home.html"> Home</a>
+          <a href="Home.html">Home</a>
         </li>
         <li>
-          <a href="#">Profile</a>
+          <a href="profile.html">Profile</a>
         </li>
         <li>
           <a href="Add_Course.html">
             add courses</a>
         </li>
         <li>
-          <a href="Courses.html"> view courses</a>
-        </li>
-        <li>
           <a class="now" href="Add_Student.html"> add students</a>
         </li>
         <li>
-          <a href="students.html"> view students</a>
+          <a href="Courses.html"> view courses</a>
+        </li>
+        <li>
+          <a href="students.html">view students</a>
         </li>
         <li style="float: right;">
           <a href="Login.html">Sign out</a>
-      </li>
+        </li>
       </ul>
     </nav>
   </div>
@@ -132,8 +133,11 @@
           <h1>Student Registration</h1>
           <p>Please fill in this form to add a student.</p>
           <hr>
-          <label for="Name"><b>Name</b></label>
-          <input type="text" placeholder="Enter Name" name="Name" required>
+          <ul>
+            <label for="Name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="Name" required>
+
+          </ul>
 
           <label for="ID"><b>ID</b></label>
           <input type="text" placeholder="Enter ID" name="ID" required>
@@ -263,8 +267,8 @@
           </span>
           <br /><br />
 
-          <div class="clearfix">
-            <button type="submit" class="addbtn">Add</button>
+          <div class="center">
+            <button type="submit">Add</button>
           </div>
         </div>
       </form>
