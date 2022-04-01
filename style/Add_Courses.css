@@ -1,4 +1,45 @@
-S
+.weekDays-selector {
+  display: flex;
+  margin-bottom: 36px;
+  overflow: hidden;
+}
+
+.weekDays-selector input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.weekDays-selector label {
+  display: inline-block;
+  background: #c9c9c9;
+  height: 50px;
+  width: 50px;
+  margin-right: 22px;
+  margin-left: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.weekDays-selector input:checked + label {
+  background-color: #004e7a;
+  color: white;
+  transform: scale(1.2);
+  transition: transform 80ms ease-in;
+}
+
+select {
+  font-size: 20px;
+  padding: 5px;
+  background-color: rgb(241, 241, 241);
+  border-radius: 20px;
+}
 
 .modal-content {
   background-color: white;
