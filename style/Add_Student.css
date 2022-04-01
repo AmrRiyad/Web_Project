@@ -1,0 +1,187 @@
+.select-field {
+  display: flex;
+  margin-bottom: 36px;
+  overflow: hidden;
+}
+
+.select-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.select-field label {
+  display: inline-block;
+  background: #c9c9c9;
+  height: 50px;
+  width: 65px;
+  margin-right: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 95%;
+}
+
+.select-field input:checked + label {
+  background-color: #004e7a;
+  color: white;
+  transform: scale(1.2);
+  transition: transform 80ms ease-in;
+}
+
+select {
+  font-size: 20px;
+  padding: 5px;
+  background-color: rgb(241, 241, 241);
+  border-radius: 20px;
+}
+
+/* Full-width input fields */
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus,
+input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid white;
+  background-color: #004e7a;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+form {
+  float: left;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 20px;
+}
+
+form {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 20px;
+}
+
+form {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 20px;
+}
+/* Float add button */
+.addbtn {
+  float: left;
+  width: 50%;
+  font-size: 20px;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #faf8f8;
+  margin: 20px auto;
+  /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid rgb(214, 213, 213);
+  width: 65%;
+  /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin: 15px;
+}
+
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.clearfix {
+  padding: 0 290px;
+  padding-right: 90px;
+}

@@ -1,31 +1,4 @@
-*{
-  border: none;
-}
-.weekDays-selector input {
-  display: none !important;
-}
-.weekDays-selector input[type=checkbox]+label {
-  display: inline-block;
-  border-radius: 100%;
-  background: #c9c9c9;
-  height: 50px;
-  width: 50px;
-  margin-right: 22px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  line-height: 50px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.weekDays-selector input[type=checkbox]:checked+label {
-  background-color: #004e7a;
-  color: white;
-  transform: scale(1.2);
-  transition: transform 80ms ease-in;
-
-}
-
+S
 
 .modal-content {
   background-color: white;
