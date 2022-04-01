@@ -1,15 +1,7 @@
-.select-field {
-  display: flex;
-  margin-bottom: 36px;
-  overflow: hidden;
-}
 
 .select-field input {
-  position: absolute !important;
-  clip: rect(0, 0, 0, 0);
   height: 1px;
   width: 1px;
-  overflow: hidden;
 }
 
 .select-field label {
@@ -18,12 +10,12 @@
   height: 50px;
   width: 65px;
   margin-right: 22px;
-  margin-top: 20px;
   margin-bottom: 20px;
-  line-height: 50px;
+  line-height: 50px;  
   text-align: center;
   cursor: pointer;
   border-radius: 95%;
+  user-select: none;
 }
 
 .select-field input:checked + label {
@@ -38,6 +30,9 @@ select {
   padding: 5px;
   background-color: rgb(241, 241, 241);
   border-radius: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+  text-align: left;
 }
 
 /* Full-width input fields */
@@ -79,7 +74,6 @@ button:focus {
 }
 
 form {
-  float: left;
   background-color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -99,45 +93,6 @@ input {
   border-radius: 20px;
 }
 
-form {
-  background-color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 50px;
-  height: 100%;
-  text-align: center;
-}
-
-input {
-  background-color: #eee;
-  border: none;
-  padding: 12px 15px;
-  margin: 8px 0;
-  width: 100%;
-  border-radius: 20px;
-}
-
-form {
-  background-color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 50px;
-  height: 100%;
-  text-align: center;
-}
-
-input {
-  background-color: #eee;
-  border: none;
-  padding: 12px 15px;
-  margin: 8px 0;
-  width: 100%;
-  border-radius: 20px;
-}
 /* Float add button */
 .addbtn {
   float: left;
@@ -148,40 +103,42 @@ input {
 /* Add padding to container elements */
 .container {
   padding: 16px;
+  text-align: left;
 }
 
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #faf8f8;
-  margin: 20px auto;
-  /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid rgb(214, 213, 213);
-  width: 65%;
-  /* Could be more or less, depending on screen size */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  width: 800px;
+  margin-top: 5%;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin: 15px;
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+b{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-
-.close:hover,
-.close:focus {
-  color: #f44336;
+.label_radio{
+  height: 50px;
+  width: 65px;
+  margin-right: 22px;
+  margin-bottom: 20px;
+  line-height: 50px;  
+  text-align: center;
   cursor: pointer;
 }
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.clearfix {
-  padding: 0 290px;
-  padding-right: 90px;
+.div_block{
+  margin-bottom: 10px;
+  text-align: left;
 }

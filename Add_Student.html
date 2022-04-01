@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style/nav_bar.css">
   <link rel="stylesheet" href="style/Add_Student.css">
 </head>
+
 <body>
   <div>
     <nav>
@@ -36,91 +37,97 @@
     </nav>
   </div>
   <div>
-    <div class="modal">
+    <div>
       <form class="modal-content">
         <div class="container">
           <h1>Student Registration</h1>
-          <p>Please fill in this form to add a student.</p>
-          <hr>
-          <ul>
+
+          <div>
+
             <label for="Name"><b>Name</b></label>
             <input type="text" placeholder="Enter Name" name="Name" required>
+          </div>
 
-          </ul>
+          <div>
+            <label for="ID"><b>ID</b></label>
+            <input type="text" placeholder="Enter ID" name="ID" required>
+          </div>
 
-          <label for="ID"><b>ID</b></label>
-          <input type="text" placeholder="Enter ID" name="ID" required>
+            <label for="Birthday"><b>Birthday</b></label>
+            </br>
+            <span>
+            <select required>
+              <option value=""> Days</option>
+              <option value="1"> 1</option>
+              <option value="2"> 2</option>
+              <option value="3"> 3</option>
+              <option value="4"> 4</option>
+              <option value="5"> 5</option>
+              <option value="6"> 6</option>
+              <option value="7"> 7</option>
+              <option value="8"> 8</option>
+              <option value="9"> 9</option>
+              <option value="10"> 10</option>
+              <option value="11"> 11</option>
+              <option value="12"> 12</option>
+              <option value="13"> 13</option>
+              <option value="14"> 14</option>
+              <option value="15"> 15</option>
+              <option value="16"> 16</option>
+              <option value="17"> 17</option>
+              <option value="18"> 18</option>
+              <option value="19"> 19</option>
+              <option value="20"> 20</option>
+              <option value="21"> 21</option>
+              <option value="22"> 22</option>
+              <option value="23"> 23</option>
+              <option value="24"> 24</option>
+              <option value="25"> 25</option>
+              <option value="26"> 26</option>
+              <option value="27"> 27</option>
+              <option value="28"> 28</option>
+              <option value="29"> 29</option>
+              <option value="30"> 30</option>
+              <option value="31"> 31</option>
+            </select>
+            <select name="Birthday" required>
+              <option value=""> Months</option>
+              <option value="January"> January</option>
+              <option value="February"> February</option>
+              <option value="March"> March </option>
+              <option value="April"> April </option>
+              <option value="May"> May</option>
+              <option value="June"> June</option>
+              <option value="July"> July</option>
+              <option value="August"> August</option>
+              <option value="September"> September</option>
+              <option value="October"> October</option>
+              <option value="November"> November</option>
+              <option value="December"> December</option>
+            </select>
+            <select name="Birthday" required>
+              <option value=""> Years</option>
+              <option value="1990"> 1990</option>
+              <option value="1991"> 1991</option>
+              <option value="1992"> 1992 </option>
+              <option value="1993"> 1993 </option>
+              <option value="1994"> 1994</option>
+              <option value="1995"> 1995</option>
+              <option value="1996"> 1996</option>
+              <option value="1997"> 1997</option>
+              <option value="1998"> 1998</option>
+              <option value="1999"> 1999</option>
+              <option value="2000"> 2000</option>
+              <option value="2001"> 2001</option>
+              <option value="2002"> 2002</option>
+              <option value="2003"> 2003</option>
+              <option value="2004"> 2004</option>
+              <option value="2005"> 2005</option>
+            </select>
+          </span>
+          <br>
+            
 
-          <label for="Birthday"><b>Birthday</b></label>
-          <select required>
-            <option value=""> Days</option>
-            <option value="1"> 1</option>
-            <option value="2"> 2</option>
-            <option value="3"> 3</option>
-            <option value="4"> 4</option>
-            <option value="5"> 5</option>
-            <option value="6"> 6</option>
-            <option value="7"> 7</option>
-            <option value="8"> 8</option>
-            <option value="9"> 9</option>
-            <option value="10"> 10</option>
-            <option value="11"> 11</option>
-            <option value="12"> 12</option>
-            <option value="13"> 13</option>
-            <option value="14"> 14</option>
-            <option value="15"> 15</option>
-            <option value="16"> 16</option>
-            <option value="17"> 17</option>
-            <option value="18"> 18</option>
-            <option value="19"> 19</option>
-            <option value="20"> 20</option>
-            <option value="21"> 21</option>
-            <option value="22"> 22</option>
-            <option value="23"> 23</option>
-            <option value="24"> 24</option>
-            <option value="25"> 25</option>
-            <option value="26"> 26</option>
-            <option value="27"> 27</option>
-            <option value="28"> 28</option>
-            <option value="29"> 29</option>
-            <option value="30"> 30</option>
-            <option value="31"> 31</option>
-          </select>
-          <select name="Birthday" required>
-            <option value=""> Months</option>
-            <option value="January"> January</option>
-            <option value="February"> February</option>
-            <option value="March"> March </option>
-            <option value="April"> April </option>
-            <option value="May"> May</option>
-            <option value="June"> June</option>
-            <option value="July"> July</option>
-            <option value="August"> August</option>
-            <option value="September"> September</option>
-            <option value="October"> October</option>
-            <option value="November"> November</option>
-            <option value="December"> December</option>
-          </select>
-          <select name="Birthday" required>
-            <option value=""> Years</option>
-            <option value="1990"> 1990</option>
-            <option value="1991"> 1991</option>
-            <option value="1992"> 1992 </option>
-            <option value="1993"> 1993 </option>
-            <option value="1994"> 1994</option>
-            <option value="1995"> 1995</option>
-            <option value="1996"> 1996</option>
-            <option value="1997"> 1997</option>
-            <option value="1998"> 1998</option>
-            <option value="1999"> 1999</option>
-            <option value="2000"> 2000</option>
-            <option value="2001"> 2001</option>
-            <option value="2002"> 2002</option>
-            <option value="2003"> 2003</option>
-            <option value="2004"> 2004</option>
-            <option value="2005"> 2005</option>
-          </select>
-          <br /><br />
           <label for="University"><b>University</b></label>
           <select name="University" required>
             <option value=""> University</option>
@@ -143,16 +150,14 @@
             <option value="Menoufia University"> Menoufia University</option>
           </select>
 
-          <br /><br />
 
-          <label for="Gender"><b>Gender</b></label>
+          <label for="Gender" class="label_radio"><b>Gender</b></label>
           <div class="select-field">
             <input type="radio" id="radio-one" name="gender" required>
             <label for="radio-one">Male</label>
             <input type="radio" id="radio-two" name="gender" required>
-            <label for="radio-two">Female</label>
+            <label for="radio-two" style="width: 80px;">Female</label>
           </div>
-          <br /><br />
 
           <label for="Departament"><b>Departament</b></label>
           <select name="Departament" required>
@@ -164,7 +169,6 @@
             <option value="DS"> DS</option>
           </select>
 
-          <br /><br />
 
           <label for="Status"><b>Status</b></label>
           <div class="select-field">
@@ -173,7 +177,6 @@
             <input type="radio" id="radio-four" name="status" required>
             <label for="radio-four">Inactive</label>
           </div>
-          <br /><br />
 
           <div class="center">
             <button type="submit">Add</button>
