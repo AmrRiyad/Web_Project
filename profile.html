@@ -1,150 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>profile page </title>
-    <link rel="stylesheet" href="style/table.css">
-    <link rel="stylesheet" href="style/nav_bar.css">
-    <style>
-        body {
-            background-color: white;
-        }
-
-        h1 {
-            text-align: center
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto;
-            padding: 10px;
-        }
-
-        .avatar {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        th {
-            width: 250px;
-        }
-    </style>
+  <title> Student Profile </title>
+  <link rel="stylesheet" href="style/nav_bar.css">
+  <link rel="stylesheet" href="style/profile.css">
 </head>
 
-<body style="background-color: #ebebeb;">
+<body>
+  <div>
     <nav>
-        <ul>
-            <li>
-                <a href="home.html">Home</a>
-            </li>
-            <li>
-                <a href="add_course.html">
-                    add courses</a>
-            </li>
-            <li>
-                <a href="add_student.html"> add students</a>
-            </li>
-            <li>
-                <a href="courses.html"> view courses</a>
-            </li>
-            <li>
-                <a href="students.html">view students</a>
-            </li>
-            <li style="float: right;">
-                <a href="login.html">Sign out</a>
-            </li>
-        </ul>
+
+      <ul>
+        <li>
+          <a href="home.html">Home</a>
+        </li>
+        <li>
+          <a href="add_course.html">
+            add courses</a>
+        </li>
+        <li>
+          <a href="add_student.html"> add students</a>
+        </li>
+        <li>
+          <a href="courses.html"> view courses</a>
+        </li>
+        <li>
+          <a href="students.html">view students</a>
+        </li>
+        <li>
+          <a class="now" href="profile.html"> profile</a>
+        </li>
+        <li style="float: right;">
+          <a href="login.html">Sign out</a>
+        </li>
+      </ul>
     </nav>
-    <div style="margin-top: 50px; padding: 35px 15px;">
-        <img style="width: 1903px; position: absolute;z-index: -1; top: 0px; left: 0px;"
-            src="528d59049313c60a436733fd78fda1f9.jpg">
-        <div style="margin-top: 100px;">
-            <img class="avatar" src="default_profile_avatar.svg">
-            <h3 style="text-align: center; font-size: 20px;">Name of student </h3>
+  </div>
+  <div>
+    <div>
+      <div class="modal-content">
+        <div class="container">
+          <h1>Student Profile</h1>
+          <hr>
+          <br>
+          <label for="Name"><b>Name</b></label>
+          <input type="text" name="Name" style="cursor: none;" readonly>
+
+          <label for="ID"><b>ID</b></label>
+          <input type="text" name="ID" style="cursor: none;" readonly>
+          <br><br>
+
+          <label for="Birthday" class="label_radio"><b>Birthday</b></label>
+          <input class="label" type="text" name="Days" style="width: 100px;" readonly>
+          <input class="label" type="text" name="Months" style="width: 100px;" readonly>
+          <input class="label" type="text" name="Years" style="width: 100px;" readonly>
+          <br>
+          <label for="University" class="label_radio"><b style="margin-right: -5px;">University</b></label>
+          <input class="label" type="text" name="University" style="width: 400px;" readonly>
+          <br>
+          <label for="Departament" class="label_radio"><b style="margin-right: -25px;">Departament</b></label>
+          <input class="label" type="text" name="Departament" style="width: 100px;" readonly>
+          <br>
+          <label for="Courses" class="label_radio"><b>Courses</b></label>
+          <input class="label" type="text" name="Course1" style="width: 150px;" readonly>
+          <input class="label" type="text" name="Course2" style="width: 150px;" readonly>
+          <input class="label" type="text" name="Course3" style="width: 150px;" readonly>
+          <div style="display: flex;">
+            <label for="Gender" class="label_r" style="margin-top: 35px;"><b>Gender</b></label>
+            <input class="label" type="text" name="Gender" style="width: 100px;" readonly>
+          </div>
+
+          <div style="display: flex;">
+            <label for="Status" class="label_r" style="margin-top: 35px;"><b>Status</b></label>
+            <input class="label" type="text" name="Status" style="width: 100px;" readonly>
+          </div>
+          <br>
+          <div class="center">
+            <button style="cursor: pointer;">Update</button>
+            <button style="cursor: pointer;">Delete</button>
+          </div>
         </div>
-
-        <div style="padding-top: 100px; padding-left: 100px; padding-right: 100px;">
-            <div>
-                <p style="margin-bottom: 0px; font-family: Open Sans,sans-serif;font-size: 1.125rem; font-weight: 600;">
-                    Basic Information</p>
-                <div style="border: 1px solid grey; background-color: white; width: 800px; float: left;">
-                    <div style="border: 1px solid grey; padding: 5px;">
-                        <table>
-                            <tr>
-                                <th><strong style="font-size: 18px;">Full Name</strong></th>
-                                <td style="text-indent: 502px; border: 0px; font-size: 18px;">name of student</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="border: 1px solid grey; padding: 5px;">
-                        <table>
-                            <tr>
-                                <th><strong style="font-size: 18px;">Email Address</strong></th>
-                                <td style="text-indent: 470px; border: 0px; font-size: 18px;">college acount</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="border: 1px solid grey; padding: 5px;">
-                        <table>
-                            <tr>
-                                <th><strong style="font-size: 18px;">Student ID</strong></th>
-                                <td style="text-indent: 500px; border: 0px; font-size: 18px;">student id</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-
-                <h2
-                    style="margin-bottom: 0px;margin-bottom: 0px; font-family: Open Sans,sans-serif;font-size: 1.125rem; font-weight: 600;">
-                    Additional Information</h2>
-                <div style="border: 1px solid grey; background-color: white; width: 800px; float: right;">
-                    <div style="border: 1px solid grey; padding: 5px; float: right;">
-                        <table>
-                            <tr>
-                                <th><strong style="font-size: 18px;">Gender</strong></th>
-                                <td style="text-indent: 502px; border: 0px; font-size: 18px;">
-                                    <p><a href="">Add Gender</a></p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="border: 1px solid grey; padding: 5px;">
-                        <table>
-                            <tr>
-                                <th><strong style="font-size: 18px;">Other Name/Nickname</strong></th>
-                                <td style="text-indent: 320px; border: 0px; font-size: 18px;">
-                                    <p><a href="">Add other Name/Nickname</a></p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="border: 1px solid grey; padding: 5px;">
-                        <table>
-                            <tr>
-                                <th><strong style="font-size: 18px;">Brithday</strong></th>
-                                <td style="text-indent: 500px; border: 0px; font-size: 18px;">
-                                    <p><a href="">Add brithay</a></p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="border: 1px solid grey; padding: 5px;">
-                        <table>
-                            <tr>
-                                <th><strong style="font-size: 18px;">website</strong></th>
-                                <td style="text-indent: 500px; border: 0px; font-size: 18px;">
-                                    <p><a href="">Add website</a></p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    </div>
+    </div>
+  </div>
 
 </body>
 
