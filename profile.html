@@ -5,83 +5,129 @@
   <title> Student Profile </title>
   <link rel="stylesheet" href="style/nav_bar.css">
   <link rel="stylesheet" href="style/profile.css">
+  <style>
+    .edit {
+      background-image: url('images/edit.png');
+    }
+  </style>
 </head>
 
 <body>
-  <div>
-    <nav>
-
-      <ul>
-        <li>
-          <a href="home.html">Home</a>
-        </li>
-        <li>
-          <a href="add_course.html">
-            add courses</a>
-        </li>
-        <li>
-          <a href="add_student.html"> add students</a>
-        </li>
-        <li>
-          <a href="courses.html"> view courses</a>
-        </li>
-        <li>
-          <a href="students.html">view students</a>
-        </li>
-        <li>
-          <a class="now" href="profile.html"> profile</a>
-        </li>
-        <li style="float: right;">
-          <a href="login.html">Sign out</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <ul>
+      <li>
+        <a href="home.html" class="now">Home</a>
+      </li>
+      <li>
+        <a href="add_course.html">
+          add courses</a>
+      </li>
+      <li>
+        <a href="add_student.html"> add students</a>
+      </li>
+      <li>
+        <a href="courses.html"> view courses</a>
+      </li>
+      <li>
+        <a href="students.html">view students</a>
+      </li>
+      <li style="float: right;">
+        <a href="login.html">Sign out</a>
+      </li>
+    </ul>
+  </nav>
   <div>
     <div>
       <div class="modal-content">
         <div class="container">
-          <h1>Student Profile</h1>
+          <h1>Edit Student</h1>
           <hr>
           <br>
-          <label for="Name"><b>Name</b></label>
-          <input type="text" name="Name" style="cursor: none;" readonly>
-
-          <label for="ID"><b>ID</b></label>
-          <input type="text" name="ID" style="cursor: none;" readonly>
-          <br><br>
-
-          <label for="Birthday" class="label_radio"><b>Birthday</b></label>
-          <input class="label" type="text" name="Days" style="width: 100px;" readonly>
-          <input class="label" type="text" name="Months" style="width: 100px;" readonly>
-          <input class="label" type="text" name="Years" style="width: 100px;" readonly>
-          <br>
-          <label for="University" class="label_radio"><b style="margin-right: -5px;">University</b></label>
-          <input class="label" type="text" name="University" style="width: 400px;" readonly>
-          <br>
-          <label for="Departament" class="label_radio"><b style="margin-right: -25px;">Departament</b></label>
-          <input class="label" type="text" name="Departament" style="width: 100px;" readonly>
-          <br>
-          <label for="Courses" class="label_radio"><b>Courses</b></label>
-          <input class="label" type="text" name="Course1" style="width: 150px;" readonly>
-          <input class="label" type="text" name="Course2" style="width: 150px;" readonly>
-          <input class="label" type="text" name="Course3" style="width: 150px;" readonly>
-          <div style="display: flex;">
-            <label for="Gender" class="label_r" style="margin-top: 35px;"><b>Gender</b></label>
-            <input class="label" type="text" name="Gender" style="width: 100px;" readonly>
+          <div style="width: 550px; height: 45px; margin: 10px auto;">
+            <p class="data half"> ID </p>
+            <div class="bar" style="display: inline-block;">
+              <p class="data">101</p>
+              <button class="edit" value="edit"></button>
+            </div>
           </div>
 
-          <div style="display: flex;">
-            <label for="Status" class="label_r" style="margin-top: 35px;"><b>Status</b></label>
-            <input class="label" type="text" name="Status" style="width: 100px;" readonly>
+          <div style="width: 550px; height: 45px; margin: 10px auto;">
+            <p class="data half"> Name </p>
+            <div class="bar" style="display: inline-block;">
+              <p class="data">Karl Than</p>
+              <button class="edit" value="edit"></button>
+            </div>
           </div>
-          <br>
-          <div class="center">
-            <button style="cursor: pointer;">Update</button>
-            <button style="cursor: pointer;">Delete</button>
+
+          <div style="width: 550px; height: 45px; margin: 10px auto;">
+            <p class="data half"> Birthday </p>
+            <div class="bar" style="display: inline-block;">
+              <p class="data">04/02/2022</p>
+              <button class="edit" value="edit"></button>
+            </div>
+          </div>
+
+          <div style="width: 550px; height: 45px; margin: 10px auto;">
+            <p class="data half"> University </p>
+            <div class="bar" style="display: inline-block;">
+              <p class="data">Cairo University</p>
+              <button class="edit" value="edit"></button>
+            </div>
+          </div>
+          <div style="width: 550px; height: 45px; margin: 10px auto;">
+            <p class="data half"> Departament </p>
+            <div class="bar" style="display: inline-block;">
+              <p class="data">AI</p>
+              <button class="edit" value="edit"></button>
+            </div>
+          </div>
+          
+
+          <div style="width: 550px; height: 45px; margin: 10px auto;">
+            <p class="data half"> Course 1 </p>
+            <div class="bar" style="display: inline-block;">
+              <p class="data">Logic</p>
+              <button class="edit" value="edit"></button>
+            </div>
+          </div>
+          <div style="width: 550px; height: 45px; margin: 10px auto;">
+            <p class="data half"> Course 2 </p>
+            <div class="bar" style="display: inline-block;">
+              <p class="data">Math 3</p>
+              <button class="edit" value="edit"></button>
+            </div>
+          </div>
+
+          <div style="width: 550px; height: 45px; margin: 10px auto;">
+            <p class="data half"> Course 3 </p>
+            <div class="bar" style="display: inline-block;">
+              <p class="data">Network</p>
+              <button class="edit" value="edit"></button>
+            </div>
+          </div>
+
+          <div style="width: 550px; height: 45px; margin: 10px auto;">
+            <p class="data half"> Gender </p>
+            <div class="bar" style="display: inline-block;">
+              <p class="data">male</p>
+              <button class="edit" value="edit"></button>
+            </div>
+          </div>
+
+          <div style="width: 550px; height: 45px; margin: 10px auto;">
+            <p class="data half"> Status </p>
+            <div class="bar" style="display: inline-block;">
+              <p class="data">active</p>
+              <button class="edit" value="edit"></button>
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <button class="btn">Update</button>
+            <button class="btn" style="background-color: rgb(253, 31, 31);">Delete</button>
           </div>
         </div>
-    </div>
+      </div>
     </div>
   </div>
 
