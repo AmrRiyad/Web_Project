@@ -67,10 +67,10 @@ select {
     border: 0;
     border-radius: 20px 0 0 20px;
     height: 44px;
-    width: 100px;
+    width: 120px;
     text-align: center;
-    background-color: #004e7a;
-    color: #FFFFFF;
+    background-color: #ffffff;
+    color: #004e7a ;
     font-size: 20px;
     font-weight: bold;
 }
@@ -87,10 +87,10 @@ select {
 .bar {
     margin: 40px auto;
     height: 45px;
-    width: 520px;
+    width: 550px;
     border-radius: 30px;
-    background-color: #eee;
-    border: 0.5px solid #004d7a93;
+    background-color: white;
+    border: 0;
 }
 
 .bar:hover {
