@@ -9,6 +9,17 @@
         .search {
             background-image: url('images/search_icon.png');
         }
+        .edit {
+            background-image: url('images/edit.png');
+            height: 40px;
+            width: 40px;
+            margin: 3px;
+            float: right;
+            border: 0;
+            background-color: transparent;
+            background-size: cover;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -31,9 +42,6 @@
             <li>
                 <a href="students.html" class="now">view students</a>
             </li>
-            <li>
-                <a href="profile.html"> profile</a>
-              </li>
             <li style="float: right;">
                 <a href="login.html">Sign out</a>
             </li>
@@ -57,24 +65,28 @@
                 <th> Name </th>
                 <th> Departament </th>
                 <th> Status </th>
+                <th></th>
             </tr>
             <tr>
                 <td> 101 </td>
                 <td> Karl than </td>
                 <td> AI </td>
                 <td> active </td>
+                <td> <a href="edit_student.html" style="text-decoration: none;"> <button class="edit" value="edit"></button> </a> </td>
             </tr>
             <tr>
                 <td> 102 </td>
                 <td> robin van-bastin </td>
                 <td> CS </td>
                 <td> active </td>
+                <td> <a href="#" style="text-decoration: none;"> <button class="edit" value="edit"></button> </a> </td>
             </tr>
             <tr>
                 <td> 103 </td>
                 <td> kim hyun </td>
                 <td> IS </td>
                 <td> inactive </td>
+                <td> <a href="#" style="text-decoration: none;"> <button class="edit" value="edit"></button> </a> </td>
             </tr>
         </table>
 
