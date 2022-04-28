@@ -65,6 +65,7 @@ button:active {
 button:focus {
 	outline: none;
 }
+
 form {
 	background-color: #FFFFFF;
 	display: flex;
