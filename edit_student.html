@@ -10,6 +10,8 @@
       background-image: url('images/edit.png');
     }
   </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -124,12 +126,15 @@
 
           <div style="text-align: center;">
             <button class="btn">Update</button>
-            <button class="btn" style="background-color: rgb(253, 31, 31);">Delete</button>
+            <button class="btn" onclick="removeStudent()" style="background-color: rgb(253, 31, 31);">Delete</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script type="module" src="./js/edit_student.js"></script>
+
 
 </body>
 

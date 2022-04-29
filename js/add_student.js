@@ -1,3 +1,5 @@
+
+import {studentArray} from './data.js'
 window.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementsByClassName('modal-content')[0];
     const Name = document.getElementById('Name');
@@ -9,8 +11,21 @@ window.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         if (validation() === true)
-            location.href = 'home.html';
+            {
+                var current_student = {
+                    'name' : Name.value,
+                    'id' : ID.value,
+                    // 'birthday':Birthday.value
+                    'university': University.value,
+                    'department': Departament.value
+                }
+                console.log(studentArray)
+                studentArray.push(current_student)
+                console.log(studentArray)
+                // location.href = 'home.html';
+            }
     });
+    
 
     const setError = (element, message) => {
         const inputControl = element.parentElement;

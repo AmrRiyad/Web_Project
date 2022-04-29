@@ -1,22 +1,16 @@
-var myArray = [
-    { 'id': '512', 'name': 'Amr', 'department': 'CS', 'status': 'Active' },
-    { 'id': '845', 'name': 'Riyad', 'department': 'CS', 'status': 'Active' },
-    { 'id': '127', 'name': 'Mahmoud', 'department': 'CS', 'status': 'Active' },
-    { 'id': '984', 'name': 'Amr', 'department': 'CS', 'status': 'Active' },
-    { 'id': '346', 'name': 'Hazem', 'department': 'IS', 'status': 'Inactive' },
-    { 'id': '824', 'name': 'Adel', 'department': 'AI', 'status': 'Inactive' },
-]
 
+
+import {studentArray} from './data.js'
 
 $(`.searchbar`).on('keyup', function () {
     var value = $(this).val()
 
-    var data = searchTable(value, myArray)
+    var data = searchTable(value, studentArray)
 
     buildTable(data)
 })
 
-buildTable(myArray)
+buildTable(studentArray)
 
 function searchTable(val, data) {
     var newData = []
@@ -33,7 +27,7 @@ function searchTable(val, data) {
             }
         }
         else{
-            return myArray;
+            return studentArray;
         }
     } else {
         for (var i = 0; i < data.length; i++) {
