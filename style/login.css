@@ -225,3 +225,27 @@ input {
 	height: 40px;
 	width: 40px;
 }
+
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+	border: 1px solid #ff3860 ;
+}
+
+.input-control{
+	width: 100%;
+	text-align: start;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 14px;
+    height: 20px;
+}
+
+.input-control input:focus {
+    outline: 0;
+}

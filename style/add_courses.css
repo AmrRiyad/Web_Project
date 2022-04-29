@@ -49,14 +49,13 @@ select {
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
-  padding: 50px 20px 20px 20px;
+  padding: 20px;
   margin-top: 9%;
   margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
-  width: 48%;
-  height: 75%;
-
+  width: 46%;
+  height: 74%;
 }
 
 
@@ -106,11 +105,35 @@ input {
   background-color: #eee;
   padding: 13px 15px;
   border: none;
-  margin: 9px 0px 3px;
+  margin: 5px 0px;
   border-radius: 20px;
-  margin-bottom: 10px;
   text-align: left;
   text-size-adjust: 50px;
   width: 100%;
   height: 75%;
+}
+
+
+
+.input-control.success input {
+  border-color: #09c372;
+}
+
+.input-control.error input {
+  border: 1px solid #ff3860;
+}
+
+.input-control {
+  width: 100%;
+  text-align: start;
+}
+
+.input-control .error {
+  color: #ff3860;
+  font-size: 11px;
+  height: 14px;
+}
+
+.input-control input:focus {
+  outline: 0;
 }

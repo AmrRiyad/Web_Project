@@ -6,6 +6,7 @@
     <title> Add Course page </title>
     <link rel="stylesheet" href="style/add_courses.css">
     <link rel="stylesheet" href="style/nav_bar.css">
+    <script src="./js/add_course.js"></script>
 </head>
 
 <body>
@@ -49,17 +50,23 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" placeholder="Enter Course Name" name="Name" required>
+                            <div class="input-control">
+                                <input type="text" id="Name" name="Name" placeholder="Enter Course Name">
+                                <div class="error"></div>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Course ID
+                            Course Code
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" placeholder="Enter Course ID" name="ID" required>
+                            <div class="input-control">
+                                <input type="text" id="Code" name="Code" placeholder="Enter Course Code">
+                                <div class="error"></div>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -69,25 +76,32 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" placeholder="Enter Course Hours" name="Hours" required>
+                            <div class="input-control">
+                                <input type="text" id="Hours" name="Hours" placeholder="Enter Course Hours">
+                                <div class="error"></div>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Course Departament    
+                            Course Departament
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <select name="Departament" required>
-                                <option value=""> Departament</option>
-                                <option value="CS"> CS</option>
-                                <option value="IS"> IS</option>
-                                <option value="IT"> IT </option>
-                                <option value="AI"> AI </option>
-                                <option value="DS"> DS</option>
-                            </select>
-                            
+                            <div class="input-control">
+                                <select name="Departament" id="Departament" name="Departament">
+                                    <option value=""></option>
+                                    <option value="CS"> CS</option>
+                                    <option value="IS"> IS</option>
+                                    <option value="IT"> IT </option>
+                                    <option value="AI"> AI </option>
+                                    <option value="DS"> DS</option>
+                                </select>
+                                <div class="error"></div>
+                            </div>
+
+
                         </td>
                     </tr>
                     <tr>
@@ -122,11 +136,14 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" placeholder="Enter Course Hall" name="Hall" required>
+                            <div class="input-control">
+                                <input type="text" id="Hall" name="Hall" placeholder="Enter Course Hall">
+                                <div class="error"></div>
+                            </div>
                         </td>
                     </tr>
                 </table>
-                <div class="center">
+                <div style="text-align: center;">
                     <button type="submit">Register</button>
                 </div>
             </div>
