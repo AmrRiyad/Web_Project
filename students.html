@@ -9,6 +9,7 @@
         .search {
             background-image: url('images/search_icon.png');
         }
+
         .edit {
             background-image: url('images/edit.png');
             height: 40px;
@@ -21,6 +22,7 @@
             cursor: pointer;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -47,54 +49,42 @@
             </li>
         </ul>
     </nav>
+
     <div style="margin-top: 50px; padding: 35px 15px;">
+
         <div class="bar">
             <form>
-                <select>
-                    <option value="active"> Active </option>
-                    <option value="departament"> Depart </option>
+
+                <select id='sel'>
                     <option value="id"> ID </option>
-                    <option value="inactive"> Inactive </option>
                     <option value="name" selected> Name </option>
+                    <option value="department"> Depart </option>
+                    <option value="status"> Status </option>
                 </select>
+
                 <input class="searchbar" type="text" title="Search">
                 <button class="search" type="submit" value="search"></button>
             </form>
+
         </div>
+
         <table>
-            <tr>
-                <th> ID </th>
-                <th> Name </th>
-                <th> Departament </th>
-                <th> Status </th>
-                <th></th>
-            </tr>
-            <tr>
-                <td> 101 </td>
-                <td> Karl than </td>
-                <td> AI </td>
-                <td> active </td>
-                <td> <a href="edit_student.html" style="text-decoration: none;"> <button class="edit" value="edit"></button> </a> </td>
-            </tr>
-            <tr>
-                <td> 102 </td>
-                <td> robin van-bastin </td>
-                <td> CS </td>
-                <td> active </td>
-                <td> <a href="#" style="text-decoration: none;"> <button class="edit" value="edit"></button> </a> </td>
-            </tr>
-            <tr>
-                <td> 103 </td>
-                <td> kim hyun </td>
-                <td> IS </td>
-                <td> inactive </td>
-                <td> <a href="#" style="text-decoration: none;"> <button class="edit" value="edit"></button> </a> </td>
-            </tr>
+            <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Department</th>
+                  <th class="last">Status</th>
+                </tr>
+              </thead>
+            <tbody id="myTable">
+
+            </tbody>
+
         </table>
 
-
     </div>
-
+    <script src="./js/students.js"></script>
 </body>
 
 </html>
