@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const Code = document.getElementById('Code');
     const Hours = document.getElementById('Hours');
     const Departament = document.getElementById('Departament');
+    const Days = document.getElementsByClassName('weekDays-selector')[0];
     const Hall = document.getElementById('Hall');
     form.addEventListener('submit', e => {
         e.preventDefault();
@@ -34,6 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const hoursValue = Hours.value;
         const departamentValue = Departament.value;
         const hallValue = Hall.value;
+        const weekDays = Days.getElementsByTagName('input');
         let flag = true;
         if (nameValue === '') {
             setError(Name, 'Course Name is required');
@@ -55,6 +57,21 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
             setSuccess(Hours);
         }
+        let daysValue = false ;
+        for ( var day of weekDays ){
+            if ( day.checked === true ){
+                daysValue = true ;
+                break;
+            }
+        }
+
+        if (daysValue === false) {
+            setError(Days, 'Week Days is required');
+            flag = false;
+        } else {
+            setSuccess(Days);
+        }
+        
 
         if (departamentValue === '') {
             setError(Departament, 'Department is required');
@@ -62,8 +79,11 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
             setSuccess(Departament);
         }
+
+
+
         if (hallValue === '') {
-            setError(Hall, 'Course Name is required');
+            setError(Hall, 'Hall Number is required');
             flag = false;
         } else {
             setSuccess(Hall);
