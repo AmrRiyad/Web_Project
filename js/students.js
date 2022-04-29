@@ -65,8 +65,19 @@ function buildTable(data) {
                             <td>${data[i].name}</td>
                             <td>${data[i].department}</td>
                             <td>${data[i].status}</td>
-                            <td><a href="edit_student.html" style="text-decoration: none;"> <button class="edit" value="edit"></button> </a> </td>
+                            <td><a href="edit_student.html" style="text-decoration: none;" onclick="set(${data[i].id})"> <button class="edit" value="edit"></button> </a> </td>
                        </tr>`
         table.innerHTML += row
+    }
+}
+
+function set(  ind ){
+    var studentArray = JSON.parse(localStorage.getItem("student")) ;
+    for ( var i = 0 ; i < studentArray.length ; i++ ){
+        if ( studentArray[i].id == ind ){
+            localStorage.setItem('index',i)
+            console.log(i)
+        }
+        console.log(studentArray[i])
     }
 }

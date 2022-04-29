@@ -11,12 +11,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (validation() === true){
             var current_course = {
-                'name' : Name.value,
-                'code' : Code.value,
+                'Course_name' : Name.value,
+                'ID' : Code.value,
                 'hours': Hours.value,
                 'department': Departament.value,
                 'days':Days.value,
-                'hall': Hall.value
+                'hall': Hall.value,
+                'Number_of_students' : 0,
             }
             var coursesArray = JSON.parse(localStorage.getItem("course"))
             if(coursesArray == null){

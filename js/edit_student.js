@@ -4,4 +4,6 @@ function removeStudent(){
     studentArray.splice(this, 1)
 }
 
-window.removeStudent = removeStudent
+// window.removeStudent = removeStudent
+
+console.log(localStorage.getItem('index'))
