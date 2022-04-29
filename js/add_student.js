@@ -31,11 +31,19 @@ window.addEventListener('DOMContentLoaded', () => {
     const validation = () => {
         const nameValue = Name.value;
         const idValue = ID.value;
-        const dayValue = document.getElementById('Day').value ;
-        const monthValue = document.getElementById('Month').value ;
-        const yearValue = document.getElementById('Year').value ;
+        const Day = document.getElementById('Day') ;
+        const Month = document.getElementById('Month') ;
+        const Year = document.getElementById('Year') ;
         const universityValue = University.value ;
         const departamentValue = Departament.value;
+        const course_1 = document.getElementById('Course-1') ;
+        const course_2 = document.getElementById('Course-2') ;
+        const course_3 = document.getElementById('Course-3') ;
+        const radio_1 = document.getElementById('radio-1') ;
+        const radio_2 = document.getElementById('radio-2') ;
+        const radio_3 = document.getElementById('radio-3') ;
+        const radio_4 = document.getElementById('radio-4') ;
+        const radios = document.getElementsByClassName('select-field') ;
         let flag = true;
         if (nameValue === '') {
             setError(Name, 'Student Name is required');
@@ -51,17 +59,17 @@ window.addEventListener('DOMContentLoaded', () => {
             setSuccess(ID);
         }
         
-        if ( dayValue === '' ){
-            setError(Birthday, 'Day is required');
+        if ( Day.value === '' ){
+            setError(Day, 'Day is required');
             flag = false;
-        }else if ( monthValue === '' ){
-            setError(Birthday, 'Month is required');
+        }else if ( Month.value === '' ){
+            setError(Month, 'Month is required');
             flag = false;
-        }else if ( yearValue === '' ){
-            setError(Birthday, 'Year is required');
+        }else if ( Year.value === '' ){
+            setError(Year, 'Year is required');
             flag = false;
         }else{
-            setSuccess(Birthday);
+            setSuccess(Day);
         }
 
         if (universityValue === '') {
@@ -78,7 +86,32 @@ window.addEventListener('DOMContentLoaded', () => {
             setSuccess(Departament);
         }
 
+        if ( course_1.value === '' ){
+            setError(course_1, 'Course 1 is required');
+            flag = false;
+        }else if ( course_2.value === '' ){
+            setError(course_2, 'Course 2 is required');
+            flag = false;
+        }else if ( course_3.value === '' ){
+            setError(course_3, 'Course 3 is required');
+            flag = false;
+        }else{
+            setSuccess(course_1);
+        }
 
+        if ( radio_1.checked === false && radio_2.checked === false ){
+            setError(radios[0], 'Gender is required');
+            flag = false;
+        }else{
+            setSuccess(radios[0]);
+        }
+
+        if ( radio_3.checked === false && radio_4.checked === false ){
+            setError(radios[1], 'Stauts is required');
+            flag = false;
+        }else{
+            setSuccess(radios[1]);
+        }
 
 
         return flag;
