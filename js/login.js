@@ -8,55 +8,58 @@ window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', e => {
         e.preventDefault();
 
-        if (validation() === true)
-            location.href = 'home.html';
+        const setError = (element, message) => {
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector('.error');
+            errorDisplay.innerText = message;
+            inputControl.classList.add('error');
+            inputControl.classList.remove('success')
+        }
+
+        const setSuccess = element => {
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector('.error');
+            errorDisplay.innerText = '';
+            inputControl.classList.add('success');
+            inputControl.classList.remove('error');
+        };
+
+        const isValidEmail = email => {
+            const regex = /(.+)@(.+){2,}\.(.+){2,}/i;
+            return regex.test(String(email));
+        }
+
+        const validation = () => {
+            const emailValue = email.value;
+            const passwordValue = password.value;
+            let flag = true;
+            if (emailValue === '') {
+                setError(email, 'Email is required');
+                flag = false;
+            } else if (!isValidEmail(emailValue)) {
+                setError(email, 'Please enter a valid email address');
+                flag = false;
+            } else {
+                setSuccess(email);
+            }
+
+            if (passwordValue === '') {
+                setError(password, 'Password is required');
+                flag = false;
+            } else if (passwordValue.length < 6) {
+                setError(password, 'Password must be at least 6 character.');
+                flag = false;
+            } else {
+                setSuccess(password);
+            }
+            if (flag === true)
+                location.href = 'home.html';
+
+        };
+        validation();
     });
 
-    const setError = (element, message) => {
-        const inputControl = element.parentElement;
-        const errorDisplay = inputControl.querySelector('.error');
-        errorDisplay.innerText = message;
-        inputControl.classList.add('error');
-        inputControl.classList.remove('success')
-    }
 
-    const setSuccess = element => {
-        const inputControl = element.parentElement;
-        const errorDisplay = inputControl.querySelector('.error');
-        errorDisplay.innerText = '';
-        inputControl.classList.add('success');
-        inputControl.classList.remove('error');
-    };
-
-    const isValidEmail = email => {
-        const regex = /(.+)@(.+){2,}\.(.+){2,}/i;
-        return regex.test(String(email));
-    }
-
-    const validation = () => {
-        const emailValue = email.value;
-        const passwordValue = password.value;
-        let flag = false, flag2 = false;
-        if (emailValue === '') {
-            setError(email, 'Email is required');
-        } else if (!isValidEmail(emailValue)) {
-            setError(email, 'Please enter a valid email address');
-        } else {
-            setSuccess(email);
-            flag = true;
-        }
-
-        if (passwordValue === '') {
-            setError(password, 'Password is required');
-        } else if (passwordValue.length < 6) {
-            setError(password, 'Password must be at least 6 character.')
-        } else {
-            setSuccess(password);
-            flag2 = true;
-        }
-        return (flag && flag2);
-
-    };
     signUpButton.addEventListener('click', () => {
         container.classList.add("right-panel-active");
         const form = document.getElementById('sign-up');
@@ -67,74 +70,83 @@ window.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', e => {
             e.preventDefault();
 
-            if (validation() === true)
-                location.href = 'home.html';
-        });
+            const setError = (element, message) => {
+                const inputControl = element.parentElement;
+                const errorDisplay = inputControl.querySelector('.error');
+                errorDisplay.innerText = message;
+                inputControl.classList.add('error');
+                inputControl.classList.remove('success')
+            }
 
-        const setError = (element, message) => {
-            const inputControl = element.parentElement;
-            const errorDisplay = inputControl.querySelector('.error');
-            errorDisplay.innerText = message;
-            inputControl.classList.add('error');
-            inputControl.classList.remove('success')
+            const setSuccess = element => {
+                const inputControl = element.parentElement;
+                const errorDisplay = inputControl.querySelector('.error');
+                errorDisplay.innerText = '';
+                inputControl.classList.add('success');
+                inputControl.classList.remove('error');
+            };
+
+            const isValidEmail = email => {
+                const regex = /(.+)@(.+){2,}\.(.+){2,}/i;
+                return regex.test(String(email));
+            }
+
+            const validation1 = () => {
+                const nameValue = name.value;
+                const emailValue = email.value;
+                const passwordValue = password.value;
+                const confrimPasswordValue = confrimPassword.value;
+                let flag = true;
+
+                if (nameValue === '') {
+                    setError(name, 'Name is required');
+                    flag = false;
+                } else {
+                    setSuccess(name);
+                }
+
+                if (emailValue === '') {
+                    setError(email, 'Email is required');
+                    flag = false;
+                } else if (!isValidEmail(emailValue)) {
+                    setError(email, 'Please enter a valid email address');
+                    flag = false;
+                } else {
+                    setSuccess(email);
+                }
+
+                if (passwordValue === '') {
+                    setError(password, 'Password is required');
+                    flag = false;
+                } else if (passwordValue.length < 6) {
+                    setError(password, 'Password must be at least 6 character.');
+                    flag = false;
+                } else {
+                    setSuccess(password);
+                }
+
+                if (confrimPasswordValue === '') {
+                    setError(confrimPassword, 'Confrim Password is required');
+                    flag = false;
+                } else if (confrimPasswordValue !== passwordValue) {
+                    setError(confrimPassword, "Passwords doesn't match.");
+                    flag = false;
+                } else {
+                    setSuccess(confrimPassword);
+                }
+                if (flag === true)
+                    location.href = 'home.html';
+            };
+
+            validation1();
+
+
         }
 
-        const setSuccess = element => {
-            const inputControl = element.parentElement;
-            const errorDisplay = inputControl.querySelector('.error');
-            errorDisplay.innerText = '';
-            inputControl.classList.add('success');
-            inputControl.classList.remove('error');
-        };
+        );
 
-        const isValidEmail = email => {
-            const regex = /(.+)@(.+){2,}\.(.+){2,}/i;
-            return regex.test(String(email));
-        }
 
-        const validation = () => {
-            const nameValue = name.value;
-            const emailValue = email.value;
-            const passwordValue = password.value;
-            const confrimPasswordValue = confrimPassword.value;
-            let flag = false, flag2 = false, flag3 = false, flag4 = false;
 
-            if (emailValue === '') {
-                setError(email, 'Email is required');
-            } else if (!isValidEmail(emailValue)) {
-                setError(email, 'Please enter a valid email address');
-            } else {
-                setSuccess(email);
-                flag = true;
-            }
-
-            if (nameValue === '') {
-                setError(name, 'Name is required');
-            } else {
-                setSuccess(name);
-                flag2 = true;
-            }
-
-            if (passwordValue === '') {
-                setError(password, 'Password is required');
-            } else if (passwordValue.length < 6) {
-                setError(password, 'Password must be at least 6 character.')
-            } else {
-                setSuccess(password);
-                flag3 = true;
-            }
-
-            if (confrimPasswordValue === '') {
-                setError(confrimPassword, 'Confrim Password is required');
-            } else if (confrimPasswordValue !== passwordValue) {
-                setError(confrimPassword, "Passwords doesn't match.")
-            } else {
-                setSuccess(confrimPassword);
-                flag3 = true;
-            }
-            return (flag && flag2 && flag3 && flag4);
-
-        };
     });
     signInButton.addEventListener('click', () => {
         container.classList.remove("right-panel-active");
@@ -144,55 +156,58 @@ window.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', e => {
             e.preventDefault();
 
-            if (validation() === true)
-                location.href = 'home.html';
+            const setError = (element, message) => {
+                const inputControl = element.parentElement;
+                const errorDisplay = inputControl.querySelector('.error');
+                errorDisplay.innerText = message;
+                inputControl.classList.add('error');
+                inputControl.classList.remove('success')
+            }
+
+            const setSuccess = element => {
+                const inputControl = element.parentElement;
+                const errorDisplay = inputControl.querySelector('.error');
+                errorDisplay.innerText = '';
+                inputControl.classList.add('success');
+                inputControl.classList.remove('error');
+            };
+
+            const isValidEmail = email => {
+                const regex = /(.+)@(.+){2,}\.(.+){2,}/i;
+                return regex.test(String(email));
+            }
+
+            const validation = () => {
+                const emailValue = email.value;
+                const passwordValue = password.value;
+                let flag = true;
+                if (emailValue === '') {
+                    setError(email, 'Email is required');
+                    flag = false;
+                } else if (!isValidEmail(emailValue)) {
+                    setError(email, 'Please enter a valid email address');
+                    flag = false;
+                } else {
+                    setSuccess(email);
+                }
+
+                if (passwordValue === '') {
+                    setError(password, 'Password is required');
+                    flag = false;
+                } else if (passwordValue.length < 6) {
+                    setError(password, 'Password must be at least 6 character.');
+                    flag = false;
+                } else {
+                    setSuccess(password);
+                }
+                if (flag === true)
+                    location.href = 'home.html';
+
+            };
+            validation();
         });
+    }
 
-        const setError = (element, message) => {
-            const inputControl = element.parentElement;
-            const errorDisplay = inputControl.querySelector('.error');
-            errorDisplay.innerText = message;
-            inputControl.classList.add('error');
-            inputControl.classList.remove('success')
-        }
-
-        const setSuccess = element => {
-            const inputControl = element.parentElement;
-            const errorDisplay = inputControl.querySelector('.error');
-            errorDisplay.innerText = '';
-            inputControl.classList.add('success');
-            inputControl.classList.remove('error');
-        };
-
-        const isValidEmail = email => {
-            const regex = /(.+)@(.+){2,}\.(.+){2,}/i;
-            return regex.test(String(email));
-        }
-
-        const validation = () => {
-            const emailValue = email.value;
-            const passwordValue = password.value;
-            let flag = false, flag2 = false;
-            if (emailValue === '') {
-                setError(email, 'Email is required');
-            } else if (!isValidEmail(emailValue)) {
-                setError(email, 'Please enter a valid email address');
-            } else {
-                setSuccess(email);
-                flag = true;
-            }
-
-            if (passwordValue === '') {
-                setError(password, 'Password is required');
-            } else if (passwordValue.length < 6) {
-                setError(password, 'Password must be at least 6 character.')
-            } else {
-                setSuccess(password);
-                flag2 = true;
-            }
-            return (flag && flag2);
-
-        };
-    });
+    );
 
 })
