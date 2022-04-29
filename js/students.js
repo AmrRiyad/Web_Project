@@ -20,10 +20,21 @@ buildTable(myArray)
 
 function searchTable(val, data) {
     var newData = []
-
+    val = val.toLowerCase()
     var x = document.getElementById('sel').value
     if (x == 'status') {
-        
+        if(val == 'active' || val == 'inactive'){
+            for (var i = 0; i < data.length; i++) {
+                var searchFor = data[i]
+                searchFor = searchFor.status.toLowerCase()
+                if (searchFor == val) {
+                    newData.push(data[i])
+                }
+            }
+        }
+        else{
+            return myArray;
+        }
     } else {
         for (var i = 0; i < data.length; i++) {
             var searchFor = data[i]
@@ -33,13 +44,11 @@ function searchTable(val, data) {
                     newData.push(data[i])
                 }
             } else if (x == 'name') {
-                val = val.toLowerCase()
                 searchFor = searchFor.name.toLowerCase()
                 if (searchFor.includes(val)) {
                     newData.push(data[i])
                 }
             } else if (x == 'department') {
-                val = val.toLowerCase()
                 searchFor = searchFor.department.toLowerCase()
                 if (searchFor.includes(val)) {
                     newData.push(data[i])
@@ -60,6 +69,7 @@ function buildTable(data) {
                             <td>${data[i].name}</td>
                             <td>${data[i].department}</td>
                             <td>${data[i].status}</td>
+                            <td><a href="edit_student.html" style="text-decoration: none;"> <button class="edit" value="edit"></button> </a> </td>
                        </tr>`
         table.innerHTML += row
     }

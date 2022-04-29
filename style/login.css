@@ -112,7 +112,10 @@ input {
 	width: 50%;
 	z-index: 2;
 }
-
+#signIn, #signUp{
+	color: #003553;
+	background-color: white;
+}
 .container.right-panel-active .sign-in-container {
 	transform: translateX(100%);
 }
@@ -159,9 +162,9 @@ input {
 }
 
 .overlay {
-	background: #004e7a;
-	background: -webkit-linear-gradient(to right, black, #004e7a);
-	background: linear-gradient(to right, black, #004e7a);
+	background: #003553;
+	/* background: -webkit-linear-gradient(to right, black, #004e7a);
+	background: linear-gradient(to right, black, #004e7a); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
