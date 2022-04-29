@@ -1,6 +1,8 @@
 
 
-import {studentArray} from './data.js'
+var studentArray = JSON.parse(localStorage.getItem("student"));
+
+
 
 $(`.searchbar`).on('keyup', function () {
     var value = $(this).val()

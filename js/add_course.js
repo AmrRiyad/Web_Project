@@ -9,8 +9,23 @@ window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', e => {
         e.preventDefault();
 
-        if (validation() === true)
+        if (validation() === true){
+            var current_course = {
+                'name' : Name.value,
+                'code' : Code.value,
+                'hours': Hours.value,
+                'department': Departament.value,
+                'days':Days.value,
+                'hall': Hall.value
+            }
+            var coursesArray = JSON.parse(localStorage.getItem("course"))
+            if(coursesArray == null){
+                coursesArray = []
+            }
+            coursesArray.push(current_course)
+            localStorage.setItem("course", JSON.stringify(coursesArray));
             location.href = 'home.html';
+        }
     });
 
     const setError = (element, message) => {

@@ -1,4 +1,3 @@
-import { studentArray } from "./data";
 
 function removeStudent(){
     // لسه هنشوف ازاي ندليت

@@ -1,5 +1,4 @@
 
-import {studentArray} from './data.js'
 window.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementsByClassName('modal-content')[0];
     const Name = document.getElementById('Name');
@@ -9,7 +8,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const Departament = document.getElementById('Departament');
     form.addEventListener('submit', e => {
         e.preventDefault();
-
         if (validation() === true)
             {
                 var current_student = {
@@ -19,10 +17,13 @@ window.addEventListener('DOMContentLoaded', () => {
                     'university': University.value,
                     'department': Departament.value
                 }
-                console.log(studentArray)
+                var studentArray = JSON.parse(localStorage.getItem("student"))
+                if(studentArray == null){
+                    studentArray = []
+                }
                 studentArray.push(current_student)
-                console.log(studentArray)
-                // location.href = 'home.html';
+                localStorage.setItem("student", JSON.stringify(studentArray));
+                location.href = 'home.html';
             }
     });
     
