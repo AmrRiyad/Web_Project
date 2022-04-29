@@ -11,6 +11,7 @@
       background-image: url('images/search_icon.png');
     }
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -37,55 +38,49 @@
       </li>
     </ul>
   </nav>
+
+
   <div style="margin-top: 50px; padding: 35px 15px;">
+
+
     <div class="bar">
+
       <form>
-        <select>
-          <option value="code"> Code </option>
-          <option value="departament"> Depart </option>
-          <option value="name" selected> Name </option>
+        <select id = "sel">
+
+          <option value="ID"> ID </option>
+          <option value="department"> Depart </option>
+          <option value="Course_name" selected> Name </option>
+
         </select>
+
         <input class="searchbar" type="text" title="Search">
         <button class="search" type="submit" value="search"></button>
+
       </form>
+
     </div>
+
     <table>
+
       <thead>
         <tr>
-          <th>Code</th>
+          <th>ID</th>
           <th>Course name</th>
           <th>Department</th>
           <th class="last">Number of students</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>512</td>
-          <td>Logic</td>
-          <td>General</td>
-          <td><a href="" target="blank">1200</a></td>
-        </tr>
-        <tr>
-          <td>225</td>
-          <td>Math3</td>
-          <td>General</td>
-          <td><a href="" target="blank">1012</a></td>
-        </tr>
-        <tr>
-          <td>121</td>
-          <td>Network</td>
-          <td>General</td>
-          <td><a href="" target="blank">962</a></td>
-        </tr>
-        <tr>
-          <td>232</td>
-          <td>Algorithms</td>
-          <td>CS</td>
-          <td><a href="" target="blank">355</a></td>
-        </tr>
+
+      <tbody id="myTable">
+
       </tbody>
+
     </table>
+
   </div>
+
+  <script src="./js/course.js"></script>
 </body>
 
 </html>
