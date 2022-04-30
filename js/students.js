@@ -19,7 +19,7 @@ function searchTable(val, data) {
     val = val.toLowerCase()
     var x = document.getElementById('sel').value
     if (x == 'status') {
-        if(val == 'active' || val == 'inactive'){
+        if (val == 'active' || val == 'inactive') {
             for (var i = 0; i < data.length; i++) {
                 var searchFor = data[i]
                 searchFor = searchFor.status.toLowerCase()
@@ -28,7 +28,7 @@ function searchTable(val, data) {
                 }
             }
         }
-        else{
+        else {
             return studentArray;
         }
     } else {
@@ -55,7 +55,7 @@ function searchTable(val, data) {
     return newData
 }
 function buildTable(data) {
-    var table = document.getElementById('myTable')    
+    var table = document.getElementById('myTable')
     table.innerHTML = ''
     for (var i = 0; i < data.length; i++) {
         var row = `<tr>
@@ -70,6 +70,6 @@ function buildTable(data) {
 
 }
 
-function set(ind){
-    localStorage.setItem('index',ind)
+function set(ind) {
+    localStorage.setItem('index', ind)
 }

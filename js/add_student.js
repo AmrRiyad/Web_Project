@@ -27,11 +27,11 @@ window.addEventListener('DOMContentLoaded', () => {
                     'Month': Month.value,
                     'Year': Year.value,
                 },
-                'course_1' : course_1.value ,
-                'course_2' : course_2.value ,
-                'course_3' : course_3.value ,
-                'Gender' : ( radio_1 ? "Male" : "Female" ) ,
-                'status' : ( radio_3 ? "Active" : "Inactive") ,
+                'course_1': course_1.value,
+                'course_2': course_2.value,
+                'course_3': course_3.value,
+                'Gender': (radio_1.checked ? "Male" : "Female"),
+                'status': (radio_3.checked ? "Active" : "Inactive"),
                 'university': University.value,
                 'department': Departament.value
             }
@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 studentArray = []
             }
             studentArray.push(current_student)
-            console.log(studentArray) 
+            console.log(studentArray)
             localStorage.setItem("student", JSON.stringify(studentArray));
             // location.href = 'home.html';
         }
@@ -115,6 +115,10 @@ window.addEventListener('DOMContentLoaded', () => {
             flag = false;
         } else if (course_3.value === '') {
             setError(course_3, 'Course 3 is required');
+            flag = false;
+        } else if (course_1.value == course_2.value || course_1.value == course_3.value || course_2.value == course_3.value) {
+            setError(course_1, 'The 3 Courses should be different');
+            alert('You must choose 3 different courses!!')
             flag = false;
         } else {
             setSuccess(course_1);

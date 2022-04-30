@@ -2,38 +2,38 @@
 var coursesArray = JSON.parse(localStorage.getItem("course"));
 
 
-$(`.searchbar`).on('keyup' , function(){
+$(`.searchbar`).on('keyup', function () {
     var value = $(this).val()
 
-    var data = searchTable(value , coursesArray)
-    
+    var data = searchTable(value, coursesArray)
+
     buildTable(data)
 })
 
 buildTable(coursesArray)
 
-function searchTable(val , data){
+function searchTable(val, data) {
     var newData = []
 
     var x = document.getElementById('sel').value
 
-    for(var i = 0 ; i < data.length ; i++){
+    for (var i = 0; i < data.length; i++) {
         var searchFor = data[i]
 
-        if(x == 'ID'){
-            if(searchFor.ID.includes(val)){
+        if (x == 'ID') {
+            if (searchFor.ID.includes(val)) {
                 newData.push(data[i])
             }
-        }else if(x == 'Course_name'){
+        } else if (x == 'Course_name') {
             val = val.toLowerCase()
             searchFor = searchFor.Course_name.toLowerCase()
-            if(searchFor.includes(val)){
+            if (searchFor.includes(val)) {
                 newData.push(data[i])
             }
-        }else if(x == 'department'){
+        } else if (x == 'department') {
             val = val.toLowerCase()
             searchFor = searchFor.department.toLowerCase()
-            if(searchFor.includes(val)){
+            if (searchFor.includes(val)) {
                 newData.push(data[i])
             }
         }

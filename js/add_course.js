@@ -9,18 +9,18 @@ window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', e => {
         e.preventDefault();
 
-        if (validation() === true){
+        if (validation() === true) {
             var current_course = {
-                'Course_name' : Name.value,
-                'ID' : Code.value,
+                'Course_name': Name.value,
+                'ID': Code.value,
                 'hours': Hours.value,
                 'department': Departament.value,
-                'days':Days.value,
+                'days': Days.value,
                 'hall': Hall.value,
-                'Number_of_students' : 0,
+                'Number_of_students': 0,
             }
             var coursesArray = JSON.parse(localStorage.getItem("course"))
-            if(coursesArray == null){
+            if (coursesArray == null) {
                 coursesArray = []
             }
             coursesArray.push(current_course)
@@ -73,10 +73,10 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
             setSuccess(Hours);
         }
-        let daysValue = false ;
-        for ( var day of weekDays ){
-            if ( day.checked === true ){
-                daysValue = true ;
+        let daysValue = false;
+        for (var day of weekDays) {
+            if (day.checked === true) {
+                daysValue = true;
                 break;
             }
         }
@@ -87,7 +87,7 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
             setSuccess(Days);
         }
-        
+
 
         if (departamentValue === '') {
             setError(Departament, 'Department is required');

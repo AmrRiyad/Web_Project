@@ -1,58 +1,58 @@
 var index = localStorage.getItem('index')
 var isDeleted = 0;
-function removeStudent(){
+function removeStudent() {
     var studentArray = JSON.parse(localStorage.getItem("student"))
     studentArray.splice(index, 1)
     localStorage.setItem("student", JSON.stringify(studentArray));
     isDeleted = 1;
 }
-function alertstudent(){
+function alertstudent() {
     var proceed = confirm("Are you sure you want delete this student ?");
     if (proceed) {
-         removeStudent() ;
-         location.href = "students.html" ;
+        removeStudent();
+        location.href = "students.html";
     }
 }
-function initialize(){
+function initialize() {
     isDeleted = 0;
     var studentArray = JSON.parse(localStorage.getItem("student"))
     const Name = document.getElementById('Name');
-    Name.value = studentArray[index].name ;
+    Name.value = studentArray[index].name;
     const ID = document.getElementById('ID');
-    ID.value = studentArray[index].id ;
+    ID.value = studentArray[index].id;
     const Day = document.getElementById('Day');
-    Day.value = studentArray[index].birthday.Day ;
+    Day.value = studentArray[index].birthday.Day;
     const Month = document.getElementById('Month');
-    Month.value = studentArray[index].birthday.Month ;
+    Month.value = studentArray[index].birthday.Month;
     const Year = document.getElementById('Year');
-    Year.value = studentArray[index].birthday.Year ;
+    Year.value = studentArray[index].birthday.Year;
     const University = document.getElementById('University');
-    University.value = studentArray[index].university ;
+    University.value = studentArray[index].university;
     const Departament = document.getElementById('Departament');
-    Departament.value = studentArray[index].department ;
+    Departament.value = studentArray[index].department;
     const course_1 = document.getElementById('Course-1');
-    course_1.value = studentArray[index].course_1 ;
+    course_1.value = studentArray[index].course_1;
     const course_2 = document.getElementById('Course-2');
-    course_2.value = studentArray[index].course_2 ;
+    course_2.value = studentArray[index].course_2;
     const course_3 = document.getElementById('Course-3');
-    course_3.value = studentArray[index].course_3 ;
+    course_3.value = studentArray[index].course_3;
     const radio_1 = document.getElementById('radio-1');
     const radio_2 = document.getElementById('radio-2');
-    if(studentArray[index].Gender==='Male'){
-        radio_1.checked = true ;
-    }else{
-        radio_2.checked = true ;
+    if (studentArray[index].Gender === 'Male') {
+        radio_1.checked = true;
+    } else {
+        radio_2.checked = true;
     }
     const radio_3 = document.getElementById('radio-3');
     const radio_4 = document.getElementById('radio-4');
-    if(studentArray[index].status==='Active'){
-        radio_3.checked = true ;
-    }else{
-        radio_4.checked = true ;
+    if (studentArray[index].status === 'Active') {
+        radio_3.checked = true;
+    } else {
+        radio_4.checked = true;
     }
 }
 window.addEventListener('DOMContentLoaded', () => {
-    initialize() ;
+    initialize();
     const form = document.getElementsByClassName('modal-content')[0];
     const Name = document.getElementById('Name');
     const ID = document.getElementById('ID');
@@ -80,11 +80,11 @@ window.addEventListener('DOMContentLoaded', () => {
                     'Month': Month.value,
                     'Year': Year.value,
                 },
-                'course_1' : course_1.value ,
-                'course_2' : course_2.value ,
-                'course_3' : course_3.value ,
-                'Gender' : ( radio_1 ? "Male" : "Female" ) ,
-                'status' : ( radio_3 ? "Active" : "Inactive") ,
+                'course_1': course_1.value,
+                'course_2': course_2.value,
+                'course_3': course_3.value,
+                'Gender': (radio_1.checked ? "Male" : "Female"),
+                'status': (radio_3.checked ? "Active" : "Inactive"),
                 'university': University.value,
                 'department': Departament.value
             }
@@ -163,6 +163,10 @@ window.addEventListener('DOMContentLoaded', () => {
         } else if (course_3.value === '') {
             setError(course_3, 'Course 3 is required');
             flag = false;
+        } else if (course_1.value == course_2.value || course_1.value == course_3.value || course_2.value == course_3.value) {
+            setError(course_1, 'The 3 Courses should be different');
+            alert('You must choose 3 different courses!!')
+            flag = false;
         } else {
             setSuccess(course_1);
         }
@@ -189,8 +193,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 })
 
-function updateStudent(student_element){
+function updateStudent(student_element) {
     var studentArray = JSON.parse(localStorage.getItem("student"))
-    studentArray[index] = student_element ;
+    studentArray[index] = student_element;
     localStorage.setItem("student", JSON.stringify(studentArray));
 }

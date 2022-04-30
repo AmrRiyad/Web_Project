@@ -10,7 +10,7 @@ table a:hover {
 
 table {
     border-radius: 20px;
-    border-collapse: collapse ;
+    border-collapse: collapse;
     margin: 0 auto;
     font-size: 1.5em;
     font-family: sans-serif;
@@ -26,7 +26,8 @@ table tbody td:last-of-type {
     text-align: center;
 }
 
-table td, th {
+table td,
+th {
     padding: 12px 15px;
 }
 
@@ -69,7 +70,7 @@ select {
     width: 120px;
     text-align: center;
     background-color: #ffffff;
-    color: #004e7a ;
+    color: #004e7a;
     font-size: 20px;
     font-weight: bold;
 }
@@ -118,4 +119,17 @@ select {
     border: 0;
     background-color: transparent;
     background-size: cover;
+    background-image: url('../images/search_icon.png');
+}
+
+.edit {
+    background-image: url('../images/edit.png');
+    height: 40px;
+    width: 40px;
+    margin: 3px;
+    float: right;
+    border: 0;
+    background-color: transparent;
+    background-size: cover;
+    cursor: pointer;
 }
