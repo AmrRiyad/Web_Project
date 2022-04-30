@@ -1,4 +1,10 @@
-var studentArray = JSON.parse(localStorage.getItem("student"));
+var studentArray = localStorage.getItem("student");
+
+if (studentArray) {
+    studentArray = JSON.parse(studentArray);
+} else {
+    studentArray = {};
+}
 
 console.log(studentArray)
 

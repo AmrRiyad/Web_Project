@@ -1,6 +1,11 @@
 
-var coursesArray = JSON.parse(localStorage.getItem("course"));
+var coursesArray = localStorage.getItem("course");
 
+if (coursesArray) {
+    coursesArray = JSON.parse(coursesArray);
+} else {
+    coursesArray = {};
+}
 
 $(`.searchbar`).on('keyup', function () {
     var value = $(this).val()
