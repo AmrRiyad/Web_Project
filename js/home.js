@@ -1,6 +1,11 @@
-var xValues = ["CS", "AI", "IS", "IT", "XD"];
-var yValues = [0, 0, 0, 0, 0];
+var xDepartment = ["CS", "AI", "IS", "IT", "XD"];
+var yDepartment = [0, 0, 0, 0, 0];
 
+var xgender = ["male", "female"];
+var ygender = [0, 0];
+
+var xCources = ["Math1", "Logic", "Network", "Algorithms"];
+var yCources = [0, 0, 0, 0];
 
 var students = localStorage.getItem("student");
 
@@ -17,15 +22,32 @@ count();
 function count() {
     for (var i = 0; i < students.length; i++) {
         if (students[i].department == 'CS') {
-            yValues[0]++;
-        }else if(students[i].department == 'AI'){
-            yValues[1]++;
-        } else if(students[i].department == 'IS') {
-            yValues[2]++;
-        } else if(students[i].department == 'IT') {
-            yValues[3]++;
-        } else if(students[i].department == 'XD') {
-            yValues[4]++;
+            yDepartment[0]++;
+        } else if (students[i].department == 'AI') {
+            yDepartment[1]++;
+        } else if (students[i].department == 'IS') {
+            yDepartment[2]++;
+        } else if (students[i].department == 'IT') {
+            yDepartment[3]++;
+        } else if (students[i].department == 'XD') {
+            yDepartment[4]++;
+        }
+        if (students[i].Gender == 'Male') {
+            ygender[0]++;
+        } else {
+            ygender[1]++;
+        }
+        if (students[i].course_1 == 'Math1' || students[i].course_2 == 'Math1' || students[i].course_3 == 'Math1') {
+            yCources[0]++;
+        }
+        if (students[i].course_1 == 'Logic' || students[i].course_2 == 'Logic' || students[i].course_3 == 'Logic') {
+            yCources[1]++;
+        }
+        if (students[i].course_1 == 'Network' || students[i].course_2 == 'Network' || students[i].course_3 == 'Network') {
+            yCources[2]++;
+        }
+        if (students[i].course_1 == 'Algorithms' || students[i].course_2 == 'Algorithms' || students[i].course_3 == 'Algorithms') {
+            yCources[3]++;
         }
     }
 }
@@ -44,10 +66,10 @@ Chart.defaults.global.defaultFontColor = "white";
 new Chart("Chart1", {
     type: "pie",
     data: {
-        labels: xValues,
+        labels: xDepartment,
         datasets: [{
             backgroundColor: barColors,
-            data: yValues
+            data: yDepartment
         }]
     },
 
@@ -56,10 +78,10 @@ new Chart("Chart1", {
 new Chart("Chart2", {
     type: "doughnut",
     data: {
-        labels: xValues,
+        labels: xgender,
         datasets: [{
             backgroundColor: barColors,
-            data: yValues
+            data: ygender
         }]
     },
 });
@@ -67,13 +89,19 @@ new Chart("Chart2", {
 new Chart("Chart3", {
     type: "line",
     data: {
-        labels: xValues,
+        labels: xCources,
         datasets: [{
             label: 'Number of Students in each qesm',
             fill: false,
             backgroundColor: "rgba(255,255,255)",
             borderColor: "rgba(255,255,255)",
-            data: yValues
+            data: yCources
         }]
     },
+    options: {
+        legend: {display: false},
+        scales: {
+          yAxes: [{ticks: {min: 0, max:students.length + 4}}],
+        }
+      }
 });
