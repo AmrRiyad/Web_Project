@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
             studentArray.push(current_student)
             console.log(studentArray)
             localStorage.setItem("student", JSON.stringify(studentArray));
-            // location.href = 'home.html';
+            form.reset() ;
         }
     });
 
@@ -77,7 +77,16 @@ window.addEventListener('DOMContentLoaded', () => {
             setError(ID, 'Student ID is required');
             flag = false;
         } else {
-            setSuccess(ID);
+            var studentArray = JSON.parse(localStorage.getItem("student"))
+            for (var student of studentArray) {
+                if (ID.value == student.id) {
+                    setError(ID, 'Student ID already exist');
+                    flag = false;
+                    break
+                }
+            }
+            if ( flag === true )
+                setSuccess(ID);
         }
 
         if (Day.value === '') {

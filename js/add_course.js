@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             coursesArray.push(current_course)
             localStorage.setItem("course", JSON.stringify(coursesArray));
-            location.href = 'home.html';
+            form.reset() ;
         }
     });
 
