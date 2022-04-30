@@ -2,11 +2,11 @@
 
 var studentArray = JSON.parse(localStorage.getItem("student"));
 
-
+console.log(studentArray)
 
 $(`.searchbar`).on('keyup', function () {
     var value = $(this).val()
-
+    var studentArray = JSON.parse(localStorage.getItem("student"));
     var data = searchTable(value, studentArray)
 
     buildTable(data)
@@ -54,30 +54,22 @@ function searchTable(val, data) {
     }
     return newData
 }
-
 function buildTable(data) {
-    var table = document.getElementById('myTable')
+    var table = document.getElementById('myTable')    
     table.innerHTML = ''
     for (var i = 0; i < data.length; i++) {
-
         var row = `<tr>
                             <td>${data[i].id}</td>
                             <td>${data[i].name}</td>
                             <td>${data[i].department}</td>
                             <td>${data[i].status}</td>
-                            <td><a href="edit_student.html" style="text-decoration: none;" onclick="set(${data[i].id})"> <button class="edit" value="edit"></button> </a> </td>
+                            <td><a href="edit_student.html" style="text-decoration: none;" onclick="set(${i})"> <button class="edit" value="edit"></button> </a> </td>
                        </tr>`
         table.innerHTML += row
     }
+
 }
 
-function set(  ind ){
-    var studentArray = JSON.parse(localStorage.getItem("student")) ;
-    for ( var i = 0 ; i < studentArray.length ; i++ ){
-        if ( studentArray[i].id == ind ){
-            localStorage.setItem('index',i)
-            console.log(i)
-        }
-        console.log(studentArray[i])
-    }
+function set(ind){
+    localStorage.setItem('index',ind)
 }

@@ -1,20 +1,21 @@
 var index = localStorage.getItem('index')
+var isDeleted = 0;
 function removeStudent(){
-    // لسه هنشوف ازاي ندليت
     var studentArray = JSON.parse(localStorage.getItem("student"))
     studentArray.splice(index, 1)
     localStorage.setItem("student", JSON.stringify(studentArray));
+    isDeleted = 1;
 }
 function alertstudent(){
     var proceed = confirm("Are you sure you want delete this student ?");
-if (proceed) {
-    removeStudent() ;
-    location.href = "students.html" ;
-}
+    if (proceed) {
+         removeStudent() ;
+         location.href = "students.html" ;
+    }
 }
 function initialize(){
+    isDeleted = 0;
     var studentArray = JSON.parse(localStorage.getItem("student"))
-    const form = document.getElementsByClassName('modal-content')[0];
     const Name = document.getElementById('Name');
     Name.value = studentArray[index].name ;
     const ID = document.getElementById('ID');
@@ -70,7 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const radios = document.getElementsByClassName('select-field');
     form.addEventListener('submit', e => {
         e.preventDefault();
-        if (validation() === true) {
+        if (validation() === true && !isDeleted) {
             var current_student = {
                 'name': Name.value,
                 'id': ID.value,
@@ -87,7 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 'university': University.value,
                 'department': Departament.value
             }
-            update(current_student)
+            updateStudent(current_student)
             location.href = 'students.html';
         }
     });
@@ -188,9 +189,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 })
 
-function update(element){
+function updateStudent(student_element){
     var studentArray = JSON.parse(localStorage.getItem("student"))
-    studentArray[index] = element ;
+    studentArray[index] = student_element ;
     localStorage.setItem("student", JSON.stringify(studentArray));
 }
-console.log(localStorage.getItem('index'))
