@@ -1,5 +1,8 @@
 var index = localStorage.getItem('index')
 var isDeleted = 0;
+var currentId;
+var prev = [];
+
 function removeStudent() {
     var studentArray = JSON.parse(localStorage.getItem("student"))
     studentArray.splice(index, 1)
@@ -14,12 +17,14 @@ function alertstudent() {
     }
 }
 function initialize() {
+    prev = [];
     isDeleted = 0;
     var studentArray = JSON.parse(localStorage.getItem("student"))
     const Name = document.getElementById('Name');
     Name.value = studentArray[index].name;
     const ID = document.getElementById('ID');
     ID.value = studentArray[index].id;
+    currentId = ID.value;
     const Day = document.getElementById('Day');
     Day.value = studentArray[index].birthday.Day;
     const Month = document.getElementById('Month');
@@ -50,8 +55,35 @@ function initialize() {
     } else {
         radio_4.checked = true;
     }
+
+    var coursesArray = JSON.parse(localStorage.getItem("course"))
+    if (coursesArray == null) {
+        coursesArray = []
+    }
+
+    for (var course of coursesArray) {
+        if (course.Course_name == course_1.value || course.Course_name == course_2.value || course.Course_name == course_3.value) {
+            prev.push(course.Course_name);
+        }
+    }
+
+    localStorage.setItem("course", JSON.stringify(coursesArray));
 }
 window.addEventListener('DOMContentLoaded', () => {
+    var coursesArray = JSON.parse(localStorage.getItem("course"))
+
+    function buildSelect(data) {
+        var sel = document.getElementById(`Course-${data}`)
+        sel.innerHTML = `<option value="">Course ${data}</option>`
+        for (var i = 0; i < coursesArray.length; i++) {
+            var oop = `<option value="${coursesArray[i].Course_name}"> ${coursesArray[i].Course_name}</option>`
+            sel.innerHTML += oop
+        }
+    }
+
+    buildSelect(1);
+    buildSelect(2);
+    buildSelect(3);
     initialize();
     const form = document.getElementsByClassName('modal-content')[0];
     const Name = document.getElementById('Name');
@@ -88,8 +120,32 @@ window.addEventListener('DOMContentLoaded', () => {
                 'university': University.value,
                 'department': Departament.value
             }
-            updateStudent(current_student)
-            location.href = 'students.html';
+
+
+            var coursesArray = JSON.parse(localStorage.getItem("course"))
+            if (coursesArray == null) {
+                coursesArray = []
+            }
+
+            for (var course of coursesArray) {
+                if (prev.includes(course.Course_name)) {
+                    course.Number_of_students--;
+                }
+            }
+
+            for (var course of coursesArray) {
+                if (course.Course_name == course_1.value || course.Course_name == course_2.value || course.Course_name == course_3.value) {
+                    course.Number_of_students++;
+                }
+            }
+
+            localStorage.setItem("course", JSON.stringify(coursesArray));
+
+            var studentArray = JSON.parse(localStorage.getItem("student"))
+            studentArray[index] = current_student;
+            localStorage.setItem("student", JSON.stringify(studentArray));
+
+            // location.href = 'students.html';
         }
     });
 
@@ -123,16 +179,17 @@ window.addEventListener('DOMContentLoaded', () => {
         if (ID.value === '') {
             setError(ID, 'Student ID is required');
             flag = false;
-        } else {
+        }
+        else {
             var studentArray = JSON.parse(localStorage.getItem("student"))
             for (var student of studentArray) {
-                if (ID.value == student.id) {
+                if (ID.value == student.id && ID.value != currentId) {
                     setError(ID, 'Student ID already exist');
                     flag = false;
                     break
                 }
             }
-            if ( flag === true )
+            if (flag === true)
                 setSuccess(ID);
         }
 
@@ -201,9 +258,3 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 })
-
-function updateStudent(student_element) {
-    var studentArray = JSON.parse(localStorage.getItem("student"))
-    studentArray[index] = student_element;
-    localStorage.setItem("student", JSON.stringify(studentArray));
-}

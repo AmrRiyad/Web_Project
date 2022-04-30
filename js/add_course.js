@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             coursesArray.push(current_course)
             localStorage.setItem("course", JSON.stringify(coursesArray));
-            form.reset() ;
+            form.reset();
         }
     });
 
@@ -57,14 +57,32 @@ window.addEventListener('DOMContentLoaded', () => {
             setError(Name, 'Course Name is required');
             flag = false;
         } else {
-            setSuccess(Name);
+            var courseArray = JSON.parse(localStorage.getItem("course"))
+            for (var course of courseArray) {
+                if (Name.value == course.Course_name) {
+                    setError(Name, 'This course name already exist');
+                    flag = false;
+                    break
+                }
+            }
+            if (flag === true)
+                setSuccess(Name);
         }
 
         if (codeValue === '') {
             setError(Code, 'Course Code is required');
             flag = false;
         } else {
-            setSuccess(Code);
+            var courseArray = JSON.parse(localStorage.getItem("course"))
+            for (var course of courseArray) {
+                if (Code.value == course.ID) {
+                    setError(Code, 'This course ID already exist');
+                    flag = false;
+                    break
+                }
+            }
+            if (flag === true)
+                setSuccess(Code);
         }
 
         if (hoursValue === '') {

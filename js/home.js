@@ -4,9 +4,6 @@ var yDepartment = [0, 0, 0, 0, 0];
 var xgender = ["male", "female"];
 var ygender = [0, 0];
 
-var xCources = ["Math3", "Logic", "Network", "Algorithms"];
-var yCources = [0, 0, 0, 0];
-
 var students = localStorage.getItem("student");
 
 if (students) {
@@ -36,18 +33,6 @@ function count() {
             ygender[0]++;
         } else {
             ygender[1]++;
-        }
-        if (students[i].course_1 == 'Math3' || students[i].course_2 == 'Math3' || students[i].course_3 == 'Math3') {
-            yCources[0]++;
-        }
-        if (students[i].course_1 == 'Logic' || students[i].course_2 == 'Logic' || students[i].course_3 == 'Logic') {
-            yCources[1]++;
-        }
-        if (students[i].course_1 == 'Network' || students[i].course_2 == 'Network' || students[i].course_3 == 'Network') {
-            yCources[2]++;
-        }
-        if (students[i].course_1 == 'Algorithms' || students[i].course_2 == 'Algorithms' || students[i].course_3 == 'Algorithms') {
-            yCources[3]++;
         }
     }
 }
@@ -86,22 +71,30 @@ new Chart("Chart2", {
     },
 });
 
+var courses = localStorage.getItem("course");
+
+if (courses) {
+    courses = JSON.parse(courses);
+} else {
+    courses = {};
+}
+
 new Chart("Chart3", {
     type: "line",
     data: {
-        labels: xCources,
+        labels: courses.map(e => e.Course_name),
         datasets: [{
             label: 'Number of Students in each Course',
             fill: false,
             backgroundColor: "rgba(255,255,255)",
             borderColor: "rgba(255,255,255)",
-            data: yCources
+            data: courses.map(e => e.Number_of_students)
         }]
     },
     options: {
-        legend: {display: false},
+        legend: { display: false },
         scales: {
-          yAxes: [{ticks: {min: 0, max:students.length + 4}}],
+            yAxes: [{ ticks: { min: 0, max: students.length + 4 } }],
         }
-      }
+    }
 });

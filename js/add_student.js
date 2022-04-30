@@ -1,5 +1,20 @@
-
 window.addEventListener('DOMContentLoaded', () => {
+    var coursesArray = JSON.parse(localStorage.getItem("course"))
+
+    function buildSelect(data) {
+        var sel = document.getElementById(`Course-${data}`)
+        console.log(sel);
+        sel.innerHTML = `<option value="">Course ${data}</option>`
+        for (var i = 0; i < coursesArray.length; i++) {
+            var oop = `<option value="${coursesArray[i].Course_name}"> ${coursesArray[i].Course_name}</option>`
+            sel.innerHTML += oop
+        }
+    }
+
+    buildSelect(1);
+    buildSelect(2);
+    buildSelect(3);
+
     const form = document.getElementsByClassName('modal-content')[0];
     const Name = document.getElementById('Name');
     const ID = document.getElementById('ID');
@@ -42,7 +57,21 @@ window.addEventListener('DOMContentLoaded', () => {
             studentArray.push(current_student)
             console.log(studentArray)
             localStorage.setItem("student", JSON.stringify(studentArray));
-            form.reset() ;
+
+
+            var coursesArray = JSON.parse(localStorage.getItem("course"))
+            if (coursesArray == null) {
+                coursesArray = []
+            }
+
+            for (var course of coursesArray) {
+                if (course.Course_name == course_1.value || course.Course_name == course_2.value || course.Course_name == course_3.value) {
+                    course.Number_of_students++;
+                }
+            }
+
+            localStorage.setItem("course", JSON.stringify(coursesArray));
+            form.reset();
         }
     });
 
@@ -85,7 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     break
                 }
             }
-            if ( flag === true )
+            if (flag === true)
                 setSuccess(ID);
         }
 

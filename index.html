@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="style/index.css">
     <script>
         var studentArray = []
-        var coursesArray = []
+        var coursesArray = [
+            { 'Course_name': 'Algorithms', 'ID': '1', 'hours': '3', 'department': 'CS' , 'days' : '2', 'hall' : '661', 'Number_of_students' : 0},
+            { 'Course_name': 'Math 3', 'ID': '2', 'hours': '3', 'department': 'AI' , 'days' : '3', 'hall' : '553', 'Number_of_students' : 0},
+            { 'Course_name': 'Logic Design', 'ID': '3', 'hours': '3', 'department': 'IS' , 'days' : '2', 'hall' : '420', 'Number_of_students' : 0},
+        ]
         localStorage.setItem("student", JSON.stringify(studentArray));
         localStorage.setItem("course", JSON.stringify(coursesArray));
     </script>
