@@ -4,6 +4,15 @@ var currentId;
 var prev = [];
 
 function removeStudent() {
+    var coursesArray = JSON.parse(localStorage.getItem("course"))
+    for (var course of coursesArray) {
+        if (prev.includes(course.Course_name)) {
+            course.Number_of_students--;
+        }
+    }
+  
+    localStorage.setItem("course", JSON.stringify(coursesArray));
+    
     var studentArray = JSON.parse(localStorage.getItem("student"))
     studentArray.splice(index, 1)
     localStorage.setItem("student", JSON.stringify(studentArray));
@@ -145,7 +154,7 @@ window.addEventListener('DOMContentLoaded', () => {
             studentArray[index] = current_student;
             localStorage.setItem("student", JSON.stringify(studentArray));
 
-            // location.href = 'students.html';
+            location.href = 'students.html';
         }
     });
 
