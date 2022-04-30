@@ -7,14 +7,13 @@
 }
 
 body {
+    
 	font-family: 'Montserrat', sans-serif;
     padding: 0;
     margin: -20px 0 50px;
     background: -webkit-linear-gradient(to right, black, #004e7a);
     background: linear-gradient(to right, black, #004e7a);
 }
-
-
 
 
 .center {

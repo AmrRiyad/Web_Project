@@ -1,5 +1,3 @@
-
-
 var studentArray = JSON.parse(localStorage.getItem("student"));
 
 console.log(studentArray)
