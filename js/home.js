@@ -1,10 +1,10 @@
-var xDepartment = ["CS", "AI", "IS", "IT", "XD"];
+var xDepartment = ["CS", "AI", "IS", "IT", "DS"];
 var yDepartment = [0, 0, 0, 0, 0];
 
 var xgender = ["male", "female"];
 var ygender = [0, 0];
 
-var xCources = ["Math1", "Logic", "Network", "Algorithms"];
+var xCources = ["Math3", "Logic", "Network", "Algorithms"];
 var yCources = [0, 0, 0, 0];
 
 var students = localStorage.getItem("student");
@@ -29,7 +29,7 @@ function count() {
             yDepartment[2]++;
         } else if (students[i].department == 'IT') {
             yDepartment[3]++;
-        } else if (students[i].department == 'XD') {
+        } else if (students[i].department == 'DS') {
             yDepartment[4]++;
         }
         if (students[i].Gender == 'Male') {
@@ -37,7 +37,7 @@ function count() {
         } else {
             ygender[1]++;
         }
-        if (students[i].course_1 == 'Math1' || students[i].course_2 == 'Math1' || students[i].course_3 == 'Math1') {
+        if (students[i].course_1 == 'Math3' || students[i].course_2 == 'Math3' || students[i].course_3 == 'Math3') {
             yCources[0]++;
         }
         if (students[i].course_1 == 'Logic' || students[i].course_2 == 'Logic' || students[i].course_3 == 'Logic') {
@@ -91,7 +91,7 @@ new Chart("Chart3", {
     data: {
         labels: xCources,
         datasets: [{
-            label: 'Number of Students in each qesm',
+            label: 'Number of Students in each Course',
             fill: false,
             backgroundColor: "rgba(255,255,255)",
             borderColor: "rgba(255,255,255)",
