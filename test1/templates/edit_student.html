@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+{%extends 'original.html'%}
 
-<head>
-  <title> Profile Student </title>
-  <link rel="stylesheet" href="style/nav_bar.css">
-  <link rel="stylesheet" href="style/add_student.css">
-</head>
+{%load static%}
+{%block content1%}
+<title> Profile Student </title>
+<link rel="stylesheet" href="{%static 'style/add_student.css'%}">
+{%endblock%}
+{%block content2%}
 
-<body>
   <div>
     <nav>
       <ul>
@@ -215,7 +214,5 @@
       </form>
     </div>
   </div>
-  <script src="./js/edit_student.js"></script>
-</body>
-
-</html>
+  <script src="{%static 'js/edit_student.js'%}"></script>
+{%endblock%}

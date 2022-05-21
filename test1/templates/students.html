@@ -1,0 +1,47 @@
+{%extends 'original.html'%}
+
+{%load static%}
+{%block content1%}
+<title> Students </title>
+<link rel="stylesheet" href="{%static 'style/view.css'%}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{%endblock%}
+
+{%block content2%}
+<div style="margin-top: 50px; padding: 35px 15px;">
+
+    <div class="bar">
+        <form>
+
+            <select id='sel'>
+                <option value="id" selected> ID </option>
+                <option value="name"> Name </option>
+                <option value="department"> Depart </option>
+                <option value="status"> Status </option>
+            </select>
+
+            <input class="searchbar" type="text" title="Search">
+            <button class="search" type="submit" value="search"></button>
+        </form>
+
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+
+        </tbody>
+
+    </table>
+
+</div>
+<script src="{%static 'js/students.js'%}"></script>
+{%endblock%}

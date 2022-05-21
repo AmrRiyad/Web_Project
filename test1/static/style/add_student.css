@@ -1,0 +1,169 @@
+
+
+.select-field input {
+  height: 0px;
+  width: 0px;
+}
+
+.select-field label {
+  display:inline-block;
+  border: 0.2px solid rgba(0, 0, 0, 0.589);
+  background: #eee;
+  height: 40px;
+  width: 100px;
+  margin-bottom: -5%;
+  margin-top: 5%;
+  line-height: 40px;  
+  text-align: center;
+  cursor: pointer;
+  border-radius: 20px;
+  user-select: none;
+}
+
+.select-field input:checked + label {
+  background-color: #004e7a;
+  color: white;
+  transform: scale(1.09);
+  transition: transform 70ms ease-in;
+}
+
+select {
+  font-size: 20px;
+  padding: 5px;
+  background-color: rgb(241, 241, 241);
+  border-radius: 20px;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  text-align: center;
+  height: 40px;
+  min-width: 100px;
+}
+
+
+button {
+  border-radius: 20px;
+  border: 1px solid white;
+  background-color: #004e7a;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+form {
+  background-color: #FFFFFF;
+  padding: 0 5px;
+  margin-bottom: 50px;
+  height: 100%;
+}
+
+input {
+  background-color: #eee;
+  padding: 13px 15px;
+  border: none;
+  margin: 9px 0px 3px;
+  width: 40%;
+  height: 75%;
+  border-radius: 20px;
+  text-align: left;
+  width: 97%;
+}
+input[type="text"] {
+  margin-left: 10px;
+}
+/* Float add button */
+.addbtn {
+  float: left;
+  width: 50%;
+  font-size: 20px;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  width: 48%;
+  height: 75%;
+  margin-top: 9%;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+b{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.label_radio{
+  height: 50px;
+  width: 65px;
+  margin-right: 9%;
+  margin-top: 10px;
+  line-height: 50px;  
+  text-align: center;
+  cursor: pointer;
+}
+.label_r{
+  height: 50px;
+  width: 65px;
+  margin-right: 13.5%;
+  margin-top: 10px;
+  line-height: 50px;  
+  text-align: center;
+  cursor: pointer;
+}
+.div_block{
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+
+.input-control.success input {
+  border-color: #09c372;
+}
+
+.input-control.error input {
+  border: 1px solid #ff3860;
+}
+
+.input-control {
+  width: 100%;
+  text-align: start;
+}
+
+.input-control .error {
+  color: #ff3860;
+  font-size: 11px;
+  height: 14px;
+  padding-left: 8px;
+}
+
+.input-control input:focus {
+  outline: 0;
+}
