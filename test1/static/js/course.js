@@ -1,4 +1,8 @@
 
+window.addEventListener('DOMContentLoaded', () => {
+    var element = document.getElementById("page3");
+    element.classList.add("now");
+});
 var coursesArray = localStorage.getItem("course");
 
 if (coursesArray) {

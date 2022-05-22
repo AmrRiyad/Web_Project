@@ -1,4 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
+    var element = document.getElementById("page1");
+    element.classList.add("now");
     const form = document.getElementsByClassName('modal-content')[0];
     const Name = document.getElementById('Name');
     const Code = document.getElementById('Code');

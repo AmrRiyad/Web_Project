@@ -1,3 +1,7 @@
+window.addEventListener('DOMContentLoaded', () => {
+    var element = document.getElementById("page0");
+    element.classList.add("now");
+})
 var xDepartment = ["CS", "AI", "IS", "IT", "DS"];
 var yDepartment = [0, 0, 0, 0, 0];
 

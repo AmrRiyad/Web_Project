@@ -1,3 +1,7 @@
+window.addEventListener('DOMContentLoaded', () => {
+    var element = document.getElementById("page4");
+    element.classList.add("now");
+})
 var index = localStorage.getItem('index')
 var isDeleted = 0;
 var currentId;
@@ -79,6 +83,7 @@ function initialize() {
     localStorage.setItem("course", JSON.stringify(coursesArray));
 }
 window.addEventListener('DOMContentLoaded', () => {
+
     var coursesArray = JSON.parse(localStorage.getItem("course"))
 
     function buildSelect(data) {

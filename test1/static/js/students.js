@@ -1,3 +1,7 @@
+window.addEventListener('DOMContentLoaded', () => {
+    var element = document.getElementById("page4");
+    element.classList.add("now");
+});
 var studentArray = localStorage.getItem("student");
 
 if (studentArray) {
@@ -67,7 +71,7 @@ function buildTable(data) {
                             <td>${data[i].name}</td>
                             <td>${data[i].department}</td>
                             <td>${data[i].status}</td>
-                            <td><a href="edit_student.html" style="text-decoration: none;" onclick="set(${i})"> <button class="edit" value="edit"></button> </a> </td>
+                            <td><a href='edit-students/' style="text-decoration: none;" onclick="set(${i})"> <button class="edit" value="edit"></button> </a> </td>
                        </tr>`
         table.innerHTML += row
     }
