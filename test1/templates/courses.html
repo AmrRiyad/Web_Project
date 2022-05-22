@@ -1,5 +1,4 @@
 {%extends 'original.html'%}
-
 {%load static%}
 {%block content1%}
 <title>Courses</title>
@@ -42,12 +41,19 @@
       </thead>
 
       <tbody id="myTable">
-
+        {% for m in coursesview %}
+        <tr>
+          <td>{{m.courseCode}}</td>
+          <td>{{m.courseName}}</td>
+          <td>{{m.courseDepartment}}</td>
+          <td>0</td>
+        </tr>
+        {% endfor %}
       </tbody>
 
     </table>
 
   </div>
 
-  <script src="{%static 'js/course.js'%}"></script>
+  <!--<script src="{%static 'js/course.js'%}"></script>-->
 {%endblock%}

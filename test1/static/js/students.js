@@ -20,7 +20,7 @@ $(`.searchbar`).on('keyup', function () {
     buildTable(data)
 })
 
-buildTable(studentArray)
+//buildTable(studentArray)
 
 function searchTable(val, data) {
     var newData = []

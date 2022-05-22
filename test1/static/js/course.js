@@ -19,7 +19,7 @@ $(`.searchbar`).on('keyup', function () {
     buildTable(data)
 })
 
-buildTable(coursesArray)
+//buildTable(coursesArray)
 
 function searchTable(val, data) {
     var newData = []
@@ -63,4 +63,5 @@ function buildTable(data) {
                        </tr>`
         table.innerHTML += row
     }
+    console.log("hhhh")
 }

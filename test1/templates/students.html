@@ -35,13 +35,23 @@
                 <th>Status</th>
                 <th></th>
             </tr>
+
         </thead>
         <tbody id="myTable">
+            {% for m in studentsview %}
+            <tr>
+                <td>{{m.studentId}}</td>
+                <td>{{m.studentName}}</td>
+                <td>{{m.studentDepartment}}</td>
+                <td>{{m.studentStatus}}</td>
+                <td><a href='edit-students/' style="text-decoration: none;" onclick="set(0)"> <button class="edit" value="edit"></button> </a> </td>
+           </tr>
+            {% endfor %}
 
         </tbody>
 
     </table>
 
 </div>
-<script src="{%static 'js/students.js'%}"></script>
+<!--<script src="{%static 'js/students.js'%}"></script>-->
 {%endblock%}
