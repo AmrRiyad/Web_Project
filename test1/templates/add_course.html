@@ -3,163 +3,17 @@
 {%load static%}
 {%block content1%}
 <title> Add Course page </title>
-<link rel="stylesheet" href="{%static 'style/add_courses.css'%}">
+<link rel="stylesheet" href="{%static 'style/add_courses.css'%}" >
 <script src="{%static 'js/add_course.js'%}"></script>
 {%endblock%}
 {%block content2%}
 <div>
-    
-    <!-- <form  method="POST" style="margin: 100px;  background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-      0 10px 10px rgba(0, 0, 0, 0.22); padding: 20px;
-  margin-top: 9%;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;   width: 46%;
-  height: 74%;" >
-        <fieldset>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </fieldset>
-      </form> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <form class="course-form" method="post" novalidate>
-        <!-- <div class="container"> -->
+        <div class="container">
             {% csrf_token %}
             {% include 'includes/form.html' %}
             <button type="submit" class="btn btn-success">Add</button>
-            <!-- <input type="text" id="Name" name="courseName" placeholder="Enter Course Name"> -->
-                <!-- <div class="error"></div> -->
-            <!-- {{ form.as_p }} -->
-            <!-- <p>
-            <h1>Course Registration</h1>
-            </p>
-            <hr>
-            <table>
-                <tr>
-                    <td>
-                        Course Name
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="input-control">
-                            <input type="text" id="Name" name="courseName" placeholder="Enter Course Name">
-                            <div class="error"></div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Course Code
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="input-control">
-                            <input type="text" id="Code" name="courseCode" placeholder="Enter Course Code">
-                            <div class="error"></div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Course Hours
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="input-control">
-                            <input type="text" id="Hours" name="courseHours" placeholder="Enter Course Hours">
-                            <div class="error"></div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Course Departament
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="input-control">
-                            <select name="courseDepartment" id="Departament">
-                                <option value=""></option>
-                                <option value="CS"> CS</option>
-                                <option value="IS"> IS</option>
-                                <option value="IT"> IT </option>
-                                <option value="AI"> AI </option>
-                                <option value="DS"> DS</option>
-                            </select>
-                            <div class="error"></div>
-                        </div>
-
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Course Days
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="input-control">
-                            <div class="weekDays-selector">
-                                <input type="checkbox" id="weekday-sat" />
-                                <label for="weekday-sat">Sa</label>
-                                <input type="checkbox" id="weekday-sun" />
-                                <label for="weekday-sun">Su</label>
-                                <input type="checkbox" id="weekday-mon" />
-                                <label for="weekday-mon">Mo</label>
-                                <input type="checkbox" id="weekday-tue" />
-                                <label for="weekday-tue">Tu</label>
-                                <input type="checkbox" id="weekday-wed" />
-                                <label for="weekday-wed">We</label>
-                                <input type="checkbox" id="weekday-thu" />
-                                <label for="weekday-thu">Th</label>
-                                <input type="checkbox" id="weekday-fri" />
-                                <label for="weekday-fri">Fr</label>
-                            </div>
-                            <div class="error"></div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Course Hall
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="input-control">
-                            <input type="text" id="Hall" name="courseHall" placeholder="Enter Course Hall">
-                            <div class="error"></div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-                    <div style="text-align: center;">
-                <button type="submit">Register</button>
-            </div> -->
-        <!-- </div> -->
-
-
+        </div>
     </form>
 </div>
 {%endblock%}

@@ -1,5 +1,5 @@
 from django import forms
-from .models import CourseBase, StudentBase
+from .models import Course, Student
 
 
 class PlaceholderMixin:
@@ -13,15 +13,13 @@ class PlaceholderMixin:
 
 class MyForm(PlaceholderMixin, forms.ModelForm):
     class Meta:
-        model = CourseBase
-        fields = ["courseName", "courseCode", "course_days",
-                  "courseDepartment", "courseHours", "courseHall"]
-        labels = {'courseName': "Name", "courseCode": "Code", }
+        model = Course
+        fields = ["name", "code", "days",
+                  "department", "hours", "hall"]
 
        
 class student(PlaceholderMixin, forms.ModelForm):
     class Meta:
-        model = CourseBase
-        fields = ["courseName", "courseCode", "course_days",
-                  "courseDepartment", "courseHours", "courseHall"]
-        labels = {'courseName': "Name", "courseCode": "Code", }
+        model = Student
+        fields = ["name", "id", "birthday",
+                  "university", "department", "course1", "course2", "course3", "active", "status"]

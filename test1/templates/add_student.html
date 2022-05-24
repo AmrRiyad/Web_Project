@@ -7,8 +7,18 @@
 <script src="{%static 'js/add_student.js'%}"></script>
 {%endblock%}
 {%block content2%}
+<div>
+  <form class="modal-content" method= "post" novalidate>
+      <div class="container">
+          {% csrf_token %}
+          {% include 'includes/studentform.html' %}
+          <button type="submit" class="btn btn-success">Add</button>
+      </div>
+  </form>
+</div>
 
-    <div>
+
+    <!-- <div>
       <form class="modal-content">
         <div class="container">
           <h1>Student Registration</h1>
@@ -179,5 +189,5 @@
           </div>
         </div>
       </form>
-    </div>
+    </div> -->
 {%endblock%}

@@ -40,10 +40,10 @@
         <tbody id="myTable">
             {% for m in studentsview %}
             <tr>
-                <td>{{m.studentId}}</td>
-                <td>{{m.studentName}}</td>
-                <td>{{m.studentDepartment}}</td>
-                <td>{{m.studentStatus}}</td>
+                <td>{{m.id}}</td>
+                <td>{{m.name}}</td>
+                <td>{{m.department}}</td>
+                <td>{{m.status}}</td>
                 <td><a href='edit-students/' style="text-decoration: none;" onclick="set(0)"> <button class="edit" value="edit"></button> </a> </td>
            </tr>
             {% endfor %}

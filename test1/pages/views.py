@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render, HttpResponse
-from .models import StudentBase, CourseBase
-from .forms import MyForm
+from .models import Student, Course
+from .forms import MyForm, student
 # Create your views here.
 
 
@@ -27,7 +27,13 @@ def addCourses(request):
 
 
 def addStudent(request):
-    return render(request, 'add_student.html')
+    form = student()
+    if request.method == 'POST':
+        form = student(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('students')
+    return render(request, 'add_student.html', {'form':form})
 
 
 def editStudent(request):
@@ -39,7 +45,7 @@ def login(request):
 
 
 def coursesView(request):
-    coursesview = CourseBase.objects.all()
+    coursesview = Course.objects.all()
     return render(
         request=request,
         template_name="courses.html",
@@ -47,17 +53,9 @@ def coursesView(request):
             'coursesview': coursesview})
 
 def studentsView(request):
-    studentsview = StudentBase.objects.all()
+    studentsview = Student.objects.all()
     return render(
         request=request,
         template_name="students.html",
         context={
             'studentsview': studentsview})
-def my_form(request):
-  if request.method == "POST":
-    form = MyForm(request.POST)
-    if form.is_valid():
-      form.save()
-  else:
-      form = MyForm()
-  return render(request, 'add_course.html', {'form': form})

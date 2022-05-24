@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import StudentBase,CourseBase
+from .models import Student,Course
 
 # Register your models here.
-admin.site.register(StudentBase)
-admin.site.register(CourseBase)
+admin.site.register(Student)
+admin.site.register(Course)
 
