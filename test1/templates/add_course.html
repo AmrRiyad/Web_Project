@@ -8,10 +8,48 @@
 {%endblock%}
 {%block content2%}
 <div>
-    <form class="modal-content">
-        <div class="container">
+    
+    <!-- <form  method="POST" style="margin: 100px;  background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.22); padding: 20px;
+  margin-top: 9%;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;   width: 46%;
+  height: 74%;" >
+        <fieldset>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </fieldset>
+      </form> -->
 
-            <p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <form class="modal-content" method="POST">
+        <div class="container">
+            {% csrf_token %}
+            
+            <div class="input-control">
+                <p>NAME</p>
+                <li id="courseName"placeholder="Enter Course Name">{{form.message}}</li>
+                <!-- <input type="text" id="Name" name="courseName" placeholder="Enter Course Name"> -->
+                <!-- <div class="error"></div> -->
+            </div>
+            <!-- {{ form.as_p }} -->
+            <!-- <p>
             <h1>Course Registration</h1>
             </p>
             <hr>
@@ -24,7 +62,7 @@
                 <tr>
                     <td>
                         <div class="input-control">
-                            <input type="text" id="Name" name="Name" placeholder="Enter Course Name">
+                            <input type="text" id="Name" name="courseName" placeholder="Enter Course Name">
                             <div class="error"></div>
                         </div>
                     </td>
@@ -37,7 +75,7 @@
                 <tr>
                     <td>
                         <div class="input-control">
-                            <input type="text" id="Code" name="Code" placeholder="Enter Course Code">
+                            <input type="text" id="Code" name="courseCode" placeholder="Enter Course Code">
                             <div class="error"></div>
                         </div>
                     </td>
@@ -50,7 +88,7 @@
                 <tr>
                     <td>
                         <div class="input-control">
-                            <input type="text" id="Hours" name="Hours" placeholder="Enter Course Hours">
+                            <input type="text" id="Hours" name="courseHours" placeholder="Enter Course Hours">
                             <div class="error"></div>
                         </div>
                     </td>
@@ -63,7 +101,7 @@
                 <tr>
                     <td>
                         <div class="input-control">
-                            <select name="Departament" id="Departament">
+                            <select name="courseDepartment" id="Departament">
                                 <option value=""></option>
                                 <option value="CS"> CS</option>
                                 <option value="IS"> IS</option>
@@ -113,15 +151,15 @@
                 <tr>
                     <td>
                         <div class="input-control">
-                            <input type="text" id="Hall" name="Hall" placeholder="Enter Course Hall">
+                            <input type="text" id="Hall" name="courseHall" placeholder="Enter Course Hall">
                             <div class="error"></div>
                         </div>
                     </td>
                 </tr>
             </table>
-            <div style="text-align: center;">
+                    <div style="text-align: center;">
                 <button type="submit">Register</button>
-            </div>
+            </div> -->
         </div>
 
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from .models import StudentBase, CourseBase
-
+from .forms import MyForm
 # Create your views here.
 
 
@@ -47,3 +47,11 @@ def studentsView(request):
         template_name="students.html",
         context={
             'studentsview': studentsview})
+def my_form(request):
+  if request.method == "POST":
+    form = MyForm(request.POST)
+    if form.is_valid():
+      form.save()
+  else:
+      form = MyForm()
+  return render(request, 'add_course.html', {'form': form})
