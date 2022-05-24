@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 class StudentBase(models.Model):
     studentName = models.CharField(max_length=55)
-    studentId   = models.CharField(max_length=55,primary_key = True)
+    studentId = models.CharField(max_length=55,primary_key = True)
     studentDay = models.IntegerField()
     studentMonth = models.IntegerField()
     studentYear = models.IntegerField()
@@ -15,10 +15,11 @@ class StudentBase(models.Model):
     studentCourse3 = models.CharField(max_length=55)
     studentActive = models.BooleanField()
     studentStatus = models.BooleanField()
+    
 class CourseBase(models.Model):
-    courseName  = models.CharField(max_length=55)
+    courseName  = models.CharField(max_length=55, unique=True)
     courseCode  = models.CharField(max_length=55,primary_key = True)
-    courseDays  = models.IntegerField()
+    course_days  = models.IntegerField()
     courseDepartment = models.CharField(max_length=55)
     courseHours = models.IntegerField()
     courseHall  = models.CharField(max_length=55)

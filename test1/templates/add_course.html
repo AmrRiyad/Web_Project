@@ -38,16 +38,13 @@
 
 
 
-    <form class="modal-content" method="POST">
-        <div class="container">
+    <form class="course-form" method="post" novalidate>
+        <!-- <div class="container"> -->
             {% csrf_token %}
-            
-            <div class="input-control">
-                <p>NAME</p>
-                <li id="courseName"placeholder="Enter Course Name">{{form.message}}</li>
-                <!-- <input type="text" id="Name" name="courseName" placeholder="Enter Course Name"> -->
+            {% include 'includes/form.html' %}
+            <button type="submit" class="btn btn-success">Add</button>
+            <!-- <input type="text" id="Name" name="courseName" placeholder="Enter Course Name"> -->
                 <!-- <div class="error"></div> -->
-            </div>
             <!-- {{ form.as_p }} -->
             <!-- <p>
             <h1>Course Registration</h1>
@@ -160,7 +157,7 @@
                     <div style="text-align: center;">
                 <button type="submit">Register</button>
             </div> -->
-        </div>
+        <!-- </div> -->
 
 
     </form>
