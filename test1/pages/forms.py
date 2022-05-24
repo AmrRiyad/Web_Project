@@ -1,7 +1,8 @@
 from tkinter import Widget
 from django import forms
 from .models import Course, Student
-from django.forms.widgets import DateInput
+from django.forms.widgets import DateInput, CheckboxSelectMultiple
+from django.core.exceptions import ValidationError
 
 class PlaceholderMixin:
     def __init__(self, *args, **kwargs):
@@ -20,10 +21,18 @@ class MyForm(PlaceholderMixin, forms.ModelForm):
 
        
 class student(PlaceholderMixin, forms.ModelForm):
+    def clean(self):
+        courses = self.cleaned_data.get('courses')
+        if courses and courses.count() != 3:
+            raise ValidationError('You must choose exactly three courses.')
+    
+        return self.cleaned_data
+
     class Meta:
         model = Student
         fields = ["name", "id", "birthday",
-                  "university", "department", "course1", "course2", "course3", "active", "status"]
+                  "university", "department", "courses", "active", "status"]
         widgets = {
-            'birthday' : DateInput(attrs={'type': 'date'})
+            'birthday' : DateInput(attrs={'type': 'date'}),
+            'courses' : CheckboxSelectMultiple
         }

@@ -1,19 +1,16 @@
 
-/* Modal Content/Box */
-.modal-content {
+.course-form {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
-  width: 48%;
-  height: 75%;
+  padding: 20px;
   margin-top: 9%;
   margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 24px;
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 46%;
+  height: 74%;
 }
 
 #ss {
