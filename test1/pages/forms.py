@@ -1,6 +1,7 @@
+from tkinter import Widget
 from django import forms
 from .models import Course, Student
-
+from django.forms.widgets import DateInput
 
 class PlaceholderMixin:
     def __init__(self, *args, **kwargs):
@@ -23,3 +24,6 @@ class student(PlaceholderMixin, forms.ModelForm):
         model = Student
         fields = ["name", "id", "birthday",
                   "university", "department", "course1", "course2", "course3", "active", "status"]
+        widgets = {
+            'birthday' : DateInput(attrs={'type': 'date'})
+        }

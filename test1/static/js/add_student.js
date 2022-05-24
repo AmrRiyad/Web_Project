@@ -2,8 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
     var coursesArray = JSON.parse(localStorage.getItem("course"))
-    var element = document.getElementById("page2");
-    element.classList.add("now");
+    
     function buildSelect(data) {
         var sel = document.getElementById(`Course-${data}`)
         console.log(sel);

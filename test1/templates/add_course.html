@@ -4,7 +4,6 @@
 {%block content1%}
 <title> Add Course page </title>
 <link rel="stylesheet" href="{%static 'style/add_courses.css'%}" >
-<script src="{%static 'js/add_course.js'%}"></script>
 {%endblock%}
 {%block content2%}
 <div>
@@ -16,4 +15,8 @@
         </div>
     </form>
 </div>
+<script>   
+ var element = document.getElementById("page1");
+ element.classList.add("now");
+</script>
 {%endblock%}

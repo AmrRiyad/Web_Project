@@ -11,8 +11,12 @@ class Student(models.Model):
     course1 = models.CharField(max_length=55)
     course2 = models.CharField(max_length=55)
     course3 = models.CharField(max_length=55)
-    active = models.BooleanField()
-    status = models.BooleanField()
+    active_choices = (
+        (0, 'Inactive'),
+        (1, 'Active')
+    )
+    active = models.CharField(max_length=1, choices=active_choices)
+    status = models.BooleanField(default=False)
     
 class Course(models.Model):
     name  = models.CharField(max_length=55, unique=True)

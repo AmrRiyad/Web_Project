@@ -4,7 +4,6 @@
 {%block content1%}
 <title> Add Student </title>
 <link rel="stylesheet" href="{%static 'style/add_student.css'%}">
-<script src="{%static 'js/add_student.js'%}"></script>
 {%endblock%}
 {%block content2%}
 <div>
@@ -16,7 +15,10 @@
       </div>
   </form>
 </div>
-
+<script>
+var element = document.getElementById("page2");
+  element.classList.add("now");
+  </script>
 
     <!-- <div>
       <form class="modal-content">
