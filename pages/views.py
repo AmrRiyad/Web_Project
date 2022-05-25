@@ -1,16 +1,17 @@
-import imp
-import re
-from django.http import HttpResponse, HttpResponseRedirect
-from unicodedata import name
-from unittest import result
-from django.shortcuts import redirect, render, HttpResponse
-from .models import Student, Course
+from audioop import reverse
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
+from .models import Student, Course 
 from .forms import MyForm, student
-from django.views.generic import ListView
 from django.http import JsonResponse
-import json
-from django.contrib import messages
-from django.urls import reverse
+from django.contrib.auth import authenticate
+from django.shortcuts import  render, redirect
+from .forms import SignUpForm
+from django.shortcuts import render, redirect
+from django.contrib.auth import login as auth_login
+from django.contrib import messages, contenttypes
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -19,6 +20,7 @@ from django.urls import reverse
 def index(request):
     return render(request, 'index.html')
 
+@login_required
 def home(request):
     return render(request, 'home.html')
 
@@ -55,16 +57,11 @@ def addStudent(request):
     return render(request, 'add_student.html', {'form':form})
 
 
-
-    
-
-
-def login(request):
-    return render(request, 'login.html')
-
-
 def coursesView(request):
     coursesview = Course.objects.all() 
+    for iter in coursesview:
+        iter.num = Student.objects.filter( courses__in = [iter] ).count()
+        iter.save(update_fields=['num'])
     return render(
         request=request,
         template_name="courses.html",
@@ -100,7 +97,7 @@ def course_search(request):
                     'code' : iter.code ,
                     'name' : iter.name ,
                     'department' : iter.department ,
-                    'num' : 0 
+                    'num' : Student.objects.filter( courses__in = [iter] ).count()
                 }
                 data.append(item)
         else:
@@ -112,7 +109,7 @@ def course_search(request):
                         'code' : iter.code ,
                         'name' : iter.name ,
                         'department' : iter.department ,
-                        'num' : 0 
+                        'num' : Student.objects.filter( courses__in = [iter] ).count() 
                     }
                     data.append(item) 
             else :
@@ -155,19 +152,42 @@ def student_search(request):
 def fetch(request):
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
         students = [] 
-        courses = [] 
+        coursesArr = [] 
         qs = Student.objects.all() 
         for iter in qs :
             item = {
-                'department' : iter.department ,
-                'gender' : iter.status ,
+               'department' : iter.department ,
+               'gender' : iter.status ,
             }
             students.append(item)
         qs = Course.objects.all() 
         for iter in qs :
             item = {
                 'name' : iter.name ,
-                'num' : 0 ,
+                'num' : Student.objects.filter( courses__in = [iter] ).count() ,
             }
-            courses.append(item)
-        return JsonResponse( { 'courses' : courses  , 'students' : students  })
+            coursesArr.append(item)
+        return JsonResponse( { 'courses' : coursesArr  , 'students' : students  })
+
+
+def login(request):
+    if request.method == "POST":
+        if request.POST.get('ns') == 's':
+            _firstName = request.POST.get('Name')
+            _email = request.POST.get('Email')
+            _password = request.POST.get('Password')
+            user = User.objects.create_user(_firstName, _email,  _password)
+            user.save()
+            messages.success(request, 'Account has been created!')
+            return redirect('/login')
+        elif request.POST.get('nl') == 'l':
+            e = request.POST["Email"]
+            p = request.POST["Password"]
+            user = authenticate(username = e, password = p)
+#            print(username)
+#            print(password)
+            if user is not None:
+                return redirect('/home')
+            else:
+                return render(request, 'login.html')
+    return render(request, 'login.html')

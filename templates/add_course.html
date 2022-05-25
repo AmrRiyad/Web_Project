@@ -7,11 +7,14 @@
 {%endblock%}
 {%block content%}
 <div>
-    <form class="form" method="post" novalidate>
+    <form class="form" method= "post" novalidate>
         <div class="container">
+          <h1>Course Registration</h1>
+            <hr>
+            <br>
             {% csrf_token %}
             {% include 'includes/form.html' %}
-            <button type="submit" class="btn btn-success">Add</button>
+            <button type="submit" class="btn btn-success">Register</button>
         </div>
     </form>
 </div>

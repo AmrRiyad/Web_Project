@@ -15,6 +15,7 @@ class Course(models.Model):
     department = models.CharField(max_length=10, choices=department_choices , default= 'General')
     hours = models.IntegerField()
     hall  = models.CharField(max_length=55)
+    num = models.IntegerField( default=0 )
     def __str__(self):
         return self.name
 
@@ -33,7 +34,7 @@ class Student(models.Model):
         ('DS', 'DS')
     )
     department = models.CharField(max_length=10, choices=department_choices)
-    courses = models.ManyToManyField(Course)
+    courses = models.ManyToManyField(Course , related_name="cur")
     active_choices = (
         ('Active', 'Active'),
         ('Inactive', 'Inactive')

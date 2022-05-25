@@ -15,12 +15,11 @@
             {% csrf_token %}
 
             <select id='sel'>
-                <option value="id" selected> ID </option>
-                <option value="name"> Name </option>
+                <option value="id"> ID </option>
+                <option value="name" selected> Name </option>
                 <option value="department"> Depart </option>
                 <option value="status"> Status </option>
             </select>
-
             <input class="searchbar" type="text" title="Search">
             <button class="search" type="submit" value="search"></button>
         </form>
@@ -45,7 +44,7 @@
                 <td>{{m.name}}</td>
                 <td>{{m.department}}</td>
                 <td>{{m.active}}</td>
-                <td><a href='edit-students/{{m.id}}' style="text-decoration: none;" onclick="set(0)"> <button class="edit" value="edit"></button> </a> </td>
+                <td><a href='edit-students/{{m.id}}' style="text-decoration: none;"> <button class="edit" value="edit"></button> </a> </td>
            </tr>
             {% endfor %}
 

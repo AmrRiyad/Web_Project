@@ -2,7 +2,7 @@
 
 {%load static%}
 {%block header%}
-<title> Add Student </title>
+<title> Edit Student </title>
 <link rel="stylesheet" href="{%static 'style/form.css'%}">
 {%endblock%}
 {%block content%}
@@ -15,18 +15,19 @@
           {% csrf_token %}
           {% include 'includes/form.html' %}
           <button type="submit" class="btn btn-success">Update</button>
-          <button class="btn btn-danger" onclick="(e) =>  alertstudent(e,'{{id}}')" type="submit" name="deletebtn">Delete</button>
+          <button class="btn btn-danger" type="submit" name="deletebtn">Delete</button>
       </div>
   </form>
 </div>
 <script>
   var element = document.getElementById("page2");
   element.classList.add("now");
-  function alertstudent(e, id) {
+  const btn = document.getElementsByName('deletebtn')[0] ;
+  btn.addEventListener('click',(e)=>{
     var proceed = confirm("Are you sure you want delete this student ?");
-    if (proceed) {
-        location.href = 'students';
+    if (!proceed) {
+        e.preventDefault() ;
     }
-}
+  })
 </script>
 {%endblock%}
