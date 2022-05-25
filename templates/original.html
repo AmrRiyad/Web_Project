@@ -1,0 +1,18 @@
+{%load static%}
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="{%static 'style/nav_bar.css'%}">
+  {%block header%}
+  {%endblock%}
+</head>
+
+<body style="box-sizing: border-box; width: 100%;">
+  {%include 'nav.html'%}
+  {%block content%}
+  {%endblock%}
+</body>
+
+</html>

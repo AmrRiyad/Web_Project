@@ -1,0 +1,59 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HomePage</title>
+    <link rel="stylesheet" href="{%static 'style/index.css'%}">
+    <style>
+        #HR{
+            background-image: url("{% static 'images/human.webp' %}");
+        }
+        #SA{
+            background-image: url("{% static 'images/student.webp' %}");
+        }
+        #HS{
+            background-image: url("{% static 'images/higher.webp' %}");
+        }
+        #LT{
+            background-image: url("{% static 'images/tracking.webp' %}");
+        }
+    </style>
+</head>
+
+<body>
+    <div style="padding: 5px;">
+        <div class="card">
+            <div class="card-img" id ="HR"></div>
+            <div>
+                <h1>Human Resources</h1>
+                <button type="button">Learn More</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img" id="SA"></div>
+            <div>
+                <h1>Student Affairs</h1>
+                <button type="button">Learn More</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img" id="HS"></div>
+            <div>
+                <h1>Higher studies</h1>
+                <a href="{%url 'login'%}" style="color: white;">
+                    <button type="button">Learn More</button>
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img" id="LT"></div>
+            <div>
+                <h1>Laboratory tracking</h1>
+                <button type="button">Learn More</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

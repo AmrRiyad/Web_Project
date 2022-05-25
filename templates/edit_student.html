@@ -1,0 +1,194 @@
+{%extends 'original.html'%}
+
+{%load static%}
+{%block header%}
+<title> Profile Student </title>
+<link rel="stylesheet" href="{%static 'style/add_student.css'%}">
+{%endblock%}
+{%block content%}
+
+ 
+  <div>
+    <div>
+      <form class="modal-content">
+        <div class="container">
+          <h1>Student Information</h1>
+          <hr>
+          <br>
+          <div class="input-control">
+            <label for="Name"><b>Name</b></label>
+            <input type="text" id="Name" name="Name" placeholder="Enter Student Name">
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="ID"><b>ID</b></label>
+            <input type="text" id="ID" name="ID" placeholder="Enter Student ID">
+            <div class="error"></div>
+          </div>
+          <div class="input-control" id="Birthday">
+            <label for="Birthday" class="label_radio"><b>Birthday</b></label>
+            <select name="Day" id="Day">
+              <option value=""> Days</option>
+              <option value="1"> 1</option>
+              <option value="2"> 2</option>
+              <option value="3"> 3</option>
+              <option value="4"> 4</option>
+              <option value="5"> 5</option>
+              <option value="6"> 6</option>
+              <option value="7"> 7</option>
+              <option value="8"> 8</option>
+              <option value="9"> 9</option>
+              <option value="10"> 10</option>
+              <option value="11"> 11</option>
+              <option value="12"> 12</option>
+              <option value="13"> 13</option>
+              <option value="14"> 14</option>
+              <option value="15"> 15</option>
+              <option value="16"> 16</option>
+              <option value="17"> 17</option>
+              <option value="18"> 18</option>
+              <option value="19"> 19</option>
+              <option value="20"> 20</option>
+              <option value="21"> 21</option>
+              <option value="22"> 22</option>
+              <option value="23"> 23</option>
+              <option value="24"> 24</option>
+              <option value="25"> 25</option>
+              <option value="26"> 26</option>
+              <option value="27"> 27</option>
+              <option value="28"> 28</option>
+              <option value="29"> 29</option>
+              <option value="30"> 30</option>
+              <option value="31"> 31</option>
+            </select>
+            <select name="Month" id="Month">
+              <option value=""> Months</option>
+              <option value="January"> January</option>
+              <option value="February"> February</option>
+              <option value="March"> March </option>
+              <option value="April"> April </option>
+              <option value="May"> May</option>
+              <option value="June"> June</option>
+              <option value="July"> July</option>
+              <option value="August"> August</option>
+              <option value="September"> September</option>
+              <option value="October"> October</option>
+              <option value="November"> November</option>
+              <option value="December"> December</option>
+            </select>
+            <select name="Year" id="Year">
+              <option value=""> Years</option>
+              <option value="1990"> 1990</option>
+              <option value="1991"> 1991</option>
+              <option value="1992"> 1992 </option>
+              <option value="1993"> 1993 </option>
+              <option value="1994"> 1994</option>
+              <option value="1995"> 1995</option>
+              <option value="1996"> 1996</option>
+              <option value="1997"> 1997</option>
+              <option value="1998"> 1998</option>
+              <option value="1999"> 1999</option>
+              <option value="2000"> 2000</option>
+              <option value="2001"> 2001</option>
+              <option value="2002"> 2002</option>
+              <option value="2003"> 2003</option>
+              <option value="2004"> 2004</option>
+              <option value="2005"> 2005</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="University" class="label_radio"><b style="margin-right: -5px;">University</b></label>
+            <select name="University" id="University" style="text-align: left;">
+              <option value=""> University</option>
+              <option value="Cairo University"> Cairo University</option>
+              <option value="Ain-Shams University"> Ain-Shams University</option>
+              <option value="Assuit University"> Assuit University </option>
+              <option value="Luxor University"> Luxor University </option>
+              <option value="Al-Azhar University"> Al-Azhar University</option>
+              <option value="Aswan University"> Aswan University</option>
+              <option value="Alexandria University"> Alexandria University</option>
+              <option value="Banha University"> Banha University</option>
+              <option value="Zagazig University"> Zagazig University</option>
+              <option value="Helwan University"> Helwan University</option>
+              <option value="Suez University"> Suez University</option>
+              <option value="AUC University"> AUC University</option>
+              <option value="GUC University"> GUC University</option>
+              <option value="Mansora University"> Mansora University</option>
+              <option value="Beni-Suef University"> Beni-Suef University</option>
+              <option value="Tanta University"> Tanta University</option>
+              <option value="Menoufia University"> Menoufia University</option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="Departament" class="label_radio"><b style="margin-right: -25px;">Departament</b></label>
+            <select name="Departament" id="Departament">
+              <option value=""></option>
+              <option value="CS"> CS </option>
+              <option value="IS"> IS </option>
+              <option value="IT"> IT </option>
+              <option value="AI"> AI </option>
+              <option value="DS"> DS </option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control" id="Course">
+            <label for="Courses" class="label_radio"><b>Courses</b></label>
+            <select name="Course" id="Course-1">
+              <option value="">Course 1</option>
+              <option value="Math3"> Math3</option>
+              <option value="Logic"> Logic</option>
+              <option value="Network"> Network </option>
+              <option value="Algorithms"> Algorithms </option>
+            </select>
+            <select name="Course" id="Course-2">
+              <option value="">Course 2</option>
+              <option value="Math3"> Math3</option>
+              <option value="Logic"> Logic</option>
+              <option value="Network"> Network </option>
+              <option value="Algorithms"> Algorithms </option>
+            </select>
+            <select name="Course" id="Course-3">
+              <option value="">Course 3</option>
+              <option value="Math3"> Math3</option>
+              <option value="Logic"> Logic</option>
+              <option value="Network"> Network </option>
+              <option value="Algorithms"> Algorithms </option>
+            </select>
+            <div class="error"></div>
+          </div>
+          <div class="input-control" style="display: block ruby;">
+            <label for="Gender" class="label_r"><b>Gender</b></label>
+            <div class="select-field">
+              <input type="radio" id="radio-1" name="gender">
+              <label for="radio-1">Male</label>
+              <input type="radio" id="radio-2" name="gender">
+              <label for="radio-2">Female</label>
+            </div>
+            <div class="error"></div>
+          </div>
+
+          <div class="input-control" style="display: block ruby;">
+            <label for="Status" class="label_r"><b>Status</b></label>
+            <div class="select-field">
+              <input type="radio" id="radio-3" name="status">
+              <label for="radio-3">Active</label>
+              <input type="radio" id="radio-4" name="status">
+              <label for="radio-4">Inactive</label>
+            </div>
+            <div class="error"></div>
+          </div>
+          <br>
+          <div style="text-align: center;">
+            <div style="text-align: center;">
+              <button type="submit">Update</button>
+              <button onclick="alertstudent()" style="background-color: rgb(253, 31, 31);">Delete</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="{%static 'js/edit_student.js'%}"></script>
+{%endblock%}

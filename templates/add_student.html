@@ -1,0 +1,23 @@
+{%extends 'original.html'%}
+
+{%load static%}
+{%block header%}
+<title> Add Student </title>
+<link rel="stylesheet" href="{%static 'style/form.css'%}">
+{%endblock%}
+{%block content%}
+<div>
+  <form class="form" method= "post" novalidate>
+      <div class="container">
+          {% csrf_token %}
+          {% include 'includes/form.html' %}
+          <button type="submit" class="btn btn-success">Add</button>
+      </div>
+  </form>
+</div>
+<script>
+  var element = document.getElementById("page2");
+  element.classList.add("now");
+  </script>
+  
+{%endblock%}

@@ -1,0 +1,76 @@
+{%load static%}
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{%static 'style/login.css'%}">
+    <script src="{%static 'js/login.js'%}"></script>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form id="sign-up" action="/">
+                <h1>Create Account</h1>
+                <span>or use your email for registration</span>
+                <div class="input-control">
+                    <input type="text" id="Name" name="Name" placeholder="Name">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <input type="text" id="Email" name="Email" placeholder="Email">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <input type="password" id="Password" name="Password" placeholder="Password">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <input type="password" id="Confrim-Password" name="Confrim-Password" placeholder="Confrim Password">
+                    <div class="error"></div>
+                </div>
+                <div class="clearfix">
+                    <button type="submit" class="addbtn">Register</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <form id="sign-in" action="home.html">
+                <h1>Sign in</h1>
+                <span>or use your account</span>
+                <div class="input-control">
+                    <input type="text" id="L-Email" name="Email" placeholder="Email">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <input type="password" id="L-Password" name="Password" placeholder="Password">
+                    <div class="error"></div>
+                </div>
+                <a href="#">Forgot your password?</a>
+                <div class="clearfix">
+                    <button type="submit" class="addbtn">Login</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
