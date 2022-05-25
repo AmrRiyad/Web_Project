@@ -39,11 +39,11 @@ class MyForm(PlaceholderMixin, forms.ModelForm):
        
 class student(PlaceholderMixin, forms.ModelForm):
     def clean(self):
-        courses = self.cleaned_data.get('courses')
-        if courses and courses.count() != 3:
-            raise ValidationError('You must choose exactly three courses.')
-    
-        return self.cleaned_data
+        cleaned_data = super().clean()
+        courses = cleaned_data.get("courses")
+        if courses.count() != 3:
+            msg = "You have to choose exactly 3 courses."
+            self.add_error('courses', msg)
 
     class Meta:
         model = Student
@@ -51,5 +51,7 @@ class student(PlaceholderMixin, forms.ModelForm):
                   "university", "department", "courses", "active", "status"]
         widgets = {
             'birthday' : DateInput(attrs={'type': 'date'}),
-            'courses' : CheckboxSelectMultiple
+            # 'courses' : forms.SelectMultiple
         }
+
+

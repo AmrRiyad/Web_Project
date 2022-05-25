@@ -1,11 +1,16 @@
+import imp
+import re
+from django.http import HttpResponse, HttpResponseRedirect
 from unicodedata import name
+from unittest import result
 from django.shortcuts import redirect, render, HttpResponse
 from .models import Student, Course
 from .forms import MyForm, student
 from django.views.generic import ListView
 from django.http import JsonResponse
 import json
-
+from django.contrib import messages
+from django.urls import reverse
 
 
 # Create your views here.
@@ -38,16 +43,20 @@ def addCourses(request):
 
 def addStudent(request):
     form = student()
+    print('ana lesa')
     if request.method == 'POST':
+        print('haha')
         form = student(request.POST)
         if form.is_valid():
+            print('vaild')
             form.save()
             return redirect('students')
+    print('rabena yostor')
     return render(request, 'add_student.html', {'form':form})
 
 
-def editStudent(request):
-    return render(request, 'edit_student.html')
+
+    
 
 
 def login(request):
@@ -64,12 +73,22 @@ def coursesView(request):
 
 def studentsView(request):
     studentsview = Student.objects.all()
-    return render(
-        request=request,
-        template_name="students.html",
-        context={
-            'studentsview': studentsview})
+    return render(request, "students.html", {"Student" : studentsview})
+    
+def displaystudent(request, id):
+    updatestudent = Student.objects.get(id = id)
+    form = student(request.POST or None, instance= updatestudent)
+    if request.method == 'POST':
+        if form.is_valid(): 
+            if 'deletebtn' in request.POST:
+                updatestudent.delete()
+                return redirect('students')
+            form.save()
+            messages.success(request, "Student Updated Successfully !")
+            return render(request, "edit_student.html", {'form' : form, 'id' : id})
+    return render(request, "edit_student.html", {'form' : form, 'id' : id})
 
+  
 def course_search(request):
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
         course = request.POST.get('course')

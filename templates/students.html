@@ -39,13 +39,13 @@
 
         </thead>
         <tbody id="myTable">
-            {% for m in studentsview %}
+            {% for m in Student %}
             <tr>
                 <td>{{m.id}}</td>
                 <td>{{m.name}}</td>
                 <td>{{m.department}}</td>
                 <td>{{m.active}}</td>
-                <td><a href='edit-students/' style="text-decoration: none;" onclick="set(0)"> <button class="edit" value="edit"></button> </a> </td>
+                <td><a href='edit-students/{{m.id}}' style="text-decoration: none;" onclick="set(0)"> <button class="edit" value="edit"></button> </a> </td>
            </tr>
             {% endfor %}
 

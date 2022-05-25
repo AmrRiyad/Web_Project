@@ -5,14 +5,14 @@ class Course(models.Model):
     code  = models.CharField(max_length=55,primary_key = True)
     days  = models.IntegerField()
     department_choices = (
-        ('General','0'),
-        ('AI','1'),
-        ('CS','2'),
-        ('IS','3'),
-        ('IT','4'),
-        ('DS','5')
+        ('General','General'),
+        ('AI', 'AI'),
+        ('CS', 'CS'),
+        ('IS', 'IS'),
+        ('IT', 'IT'),
+        ('DS', 'DS')
     )
-    department = models.CharField(max_length=10, choices=department_choices , default= '0')
+    department = models.CharField(max_length=10, choices=department_choices , default= 'General')
     hours = models.IntegerField()
     hall  = models.CharField(max_length=55)
     def __str__(self):
@@ -25,23 +25,25 @@ class Student(models.Model):
     birthday = models.DateField()
     university = models.CharField(max_length=55)
     department_choices = (
-        ('General','0'),
-        ('AI','1'),
-        ('CS','2'),
-        ('IS','3'),
-        ('IT','4'),
-        ('DS','5')
+        ('General', 'General'),
+        ('AI', 'AI'),
+        ('CS', 'CS'),
+        ('IS', 'IS'),
+        ('IT', 'IT'),
+        ('DS', 'DS')
     )
-    department = models.CharField(max_length=10, choices=department_choices , default= '0')
+    department = models.CharField(max_length=10, choices=department_choices)
     courses = models.ManyToManyField(Course)
     active_choices = (
-        ('Active','1'),
-        ('Inactive','0')
+        ('Active', 'Active'),
+        ('Inactive', 'Inactive')
     )
-    active = models.CharField(max_length=10, choices=active_choices , default='1')
+    active = models.CharField(max_length=10, choices=active_choices)
     status_choices = (
-        ('Male','1'),
-        ('Female','0')
+        ('Male', 'Male'),
+        ('Female', 'Female')
     )
-    status = models.CharField(max_length=10, choices=status_choices , default= '1')
+    status = models.CharField(max_length=10, choices=status_choices)
+    class Meta:
+        db_table = "studentdetails"
     

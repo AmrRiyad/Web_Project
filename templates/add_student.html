@@ -9,6 +9,9 @@
 <div>
   <form class="form" method= "post" novalidate>
       <div class="container">
+        <h1>Student Registration</h1>
+          <hr>
+          <br>
           {% csrf_token %}
           {% include 'includes/form.html' %}
           <button type="submit" class="btn btn-success">Add</button>
@@ -18,6 +21,6 @@
 <script>
   var element = document.getElementById("page2");
   element.classList.add("now");
-  </script>
+</script>
   
 {%endblock%}
