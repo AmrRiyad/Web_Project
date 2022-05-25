@@ -8,12 +8,15 @@ const content = document.getElementById('myTable')
 const csrf = document.getElementsByName('csrfmiddlewaretoken')[0].value
 
 const sendSearchData = (query) => {
+    const fil = document.getElementById('sel').value
+    console.log(fil)  
     $.ajax({
         type: 'POST',
         url: 'search/',
         data: {
             'csrfmiddlewaretoken': csrf,
-            'course': query
+            'course': query ,
+            'filter' : fil
         },
         success: (result) => {
             var elements = result.data

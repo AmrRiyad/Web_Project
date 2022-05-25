@@ -7,13 +7,16 @@ const searchInput = document.getElementsByClassName('searchbar')[0]
 const content = document.getElementById('myTable')
 const csrf = document.getElementsByName('csrfmiddlewaretoken')[0].value
 
+
 const sendSearchData = (query) => {
+    const filter = document.getElementById('sel').value 
     $.ajax({
         type: 'POST',
         url: 'search/',
         data: {
             'csrfmiddlewaretoken': csrf,
-            'student': query
+            'student': query ,
+            'filter' : filter
         },
         success: (result) => {
             var elements = result.data
@@ -24,6 +27,7 @@ const sendSearchData = (query) => {
                 <td>${element.name}</td>
                 <td>${element.department}</td>
                 <td>${element.active}</td>
+                <td><a href='edit-students/${element.id}' style="text-decoration: none;"> <button class="edit" value="edit"></button> </a> </td>
            </tr>`
             });
         }

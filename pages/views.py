@@ -89,6 +89,8 @@ def displaystudent(request, id):
 def course_search(request):
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
         course = request.POST.get('course')
+        fil = request.POST.get('filter')
+        print(fil)
         if ( len(course) == 0 ):
             qs = Course.objects.all()
             data = []
@@ -101,8 +103,9 @@ def course_search(request):
                 }
                 data.append(item)
         else:
-            qs = Course.objects.filter( name__icontains=course)
-            if len(qs) > 0 and len(course) > 0:
+            data = []
+            if fil == "name" :
+                qs = Course.objects.filter( name__icontains=course)
                 data = []
                 for iter in qs :
                     item = {
@@ -112,8 +115,28 @@ def course_search(request):
                         'num' : Student.objects.filter( courses__in = [iter] ).count() 
                     }
                     data.append(item) 
-            else :
+            elif fil == "code" :
+                qs = Course.objects.filter( code__icontains=course)
                 data = []
+                for iter in qs :
+                    item = {
+                        'code' : iter.code ,
+                        'name' : iter.name ,
+                        'department' : iter.department ,
+                        'num' : Student.objects.filter( courses__in = [iter] ).count() 
+                    }
+                    data.append(item) 
+            elif fil == "department" :
+                qs = Course.objects.filter( department__icontains=course)
+                data = []
+                for iter in qs :
+                    item = {
+                        'code' : iter.code ,
+                        'name' : iter.name ,
+                        'department' : iter.department ,
+                        'num' : Student.objects.filter( courses__in = [iter] ).count() 
+                    }
+                    data.append(item) 
         return JsonResponse( { 'data' : data } )
     return JsonResponse({})
 
@@ -121,6 +144,7 @@ def course_search(request):
 def student_search(request):
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
         student = request.POST.get('student')
+        fil = request.POST.get('filter')
         if ( len(student) == 0 ):
             qs = Student.objects.all()
             data = []
@@ -129,12 +153,13 @@ def student_search(request):
                     'id' : iter.id ,
                     'name' : iter.name ,
                     'department' : iter.department ,
-                    'active' : iter.status
+                    'active' : iter.active
                 }
                 data.append(item)
         else:
-            qs = Student.objects.filter( name__icontains=student)
-            if len(qs) > 0 and len(student) > 0:
+            data = []
+            if fil == "name" :
+                qs = Student.objects.filter( name__icontains=student)
                 data = []
                 for iter in qs :
                     item = {
@@ -144,8 +169,39 @@ def student_search(request):
                         'active' : iter.active
                     }
                     data.append(item) 
-            else :
+            elif fil == "id" :
+                qs = Student.objects.filter( id__icontains=student)
                 data = []
+                for iter in qs :
+                    item = {
+                        'id' : iter.id ,
+                        'name' : iter.name ,
+                        'department' : iter.department ,
+                        'active' : iter.active
+                    }
+                    data.append(item) 
+            elif fil == "department" :
+                qs = Student.objects.filter( department__icontains=student)
+                data = []
+                for iter in qs :
+                    item = {
+                        'id' : iter.id ,
+                        'name' : iter.name ,
+                        'department' : iter.department ,
+                        'active' : iter.active
+                    }
+                    data.append(item) 
+            elif fil == "status" :
+                qs = Student.objects.filter( status__icontains=student)
+                data = []
+                for iter in qs :
+                    item = {
+                        'id' : iter.id ,
+                        'name' : iter.name ,
+                        'department' : iter.department ,
+                        'active' : iter.active
+                    }
+                    data.append(item) 
         return JsonResponse( { 'data' : data } )
     return JsonResponse({})
 
