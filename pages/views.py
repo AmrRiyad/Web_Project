@@ -45,15 +45,11 @@ def addCourses(request):
 
 def addStudent(request):
     form = student()
-    print('ana lesa')
     if request.method == 'POST':
-        print('haha')
         form = student(request.POST)
         if form.is_valid():
-            print('vaild')
             form.save()
             return redirect('students')
-    print('rabena yostor')
     return render(request, 'add_student.html', {'form':form})
 
 
